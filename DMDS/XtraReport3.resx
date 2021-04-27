@@ -118,54 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1078, 56</value>
-  </metadata>
-  <metadata name="kHOABindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>133, 17</value>
-  </metadata>
-  <metadata name="dSVDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="sINHVIENBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1127, 17</value>
-  </metadata>
-  <metadata name="dIEMBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>767, 56</value>
-  </metadata>
-  <metadata name="kHOATableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>296, 17</value>
-  </metadata>
-  <metadata name="gIANGVIENBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>453, 17</value>
-  </metadata>
-  <metadata name="gIANGVIENTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>646, 17</value>
-  </metadata>
-  <metadata name="lOPBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>833, 17</value>
-  </metadata>
-  <metadata name="lOPTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>983, 17</value>
-  </metadata>
-  <metadata name="sINHVIENTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1310, 17</value>
-  </metadata>
-  <metadata name="dSVDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="sINHVIENBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>212, 56</value>
-  </metadata>
-  <metadata name="mONHOCBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>402, 56</value>
-  </metadata>
-  <metadata name="mONHOCTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>587, 56</value>
-  </metadata>
-  <metadata name="dIEMTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>925, 56</value>
-  </metadata>
-  <metadata name="reportGenerator1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
-  </metadata>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IkRJRU0iPjxGaWVsZCBOYW1lPSJNQVNWIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1BTUgiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTEFOIiBUeXBlPSJJbnQxNiIgLz48RmllbGQgTmFtZT0iRElFTSIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJyb3dndWlkIiBUeXBlPSJHdWlkIiAvPjwvVmlldz48VmlldyBOYW1lPSJHSUFOR1ZJRU4iPjxGaWVsZCBOYW1lPSJNQUdWIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkhPIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRFTiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNQUtIIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9InJvd2d1aWQiIFR5cGU9Ikd1aWQiIC8+PC9WaWV3PjxWaWV3IE5hbWU9IktIT0EiPjxGaWVsZCBOYW1lPSJNQUtIIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRFTktIIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9InJvd2d1aWQiIFR5cGU9Ikd1aWQiIC8+PC9WaWV3PjxWaWV3IE5hbWU9IkxPUCI+PEZpZWxkIE5hbWU9Ik1BTE9QIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRFTkxPUCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNQUtIIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9InJvd2d1aWQiIFR5cGU9Ikd1aWQiIC8+PC9WaWV3PjxWaWV3IE5hbWU9Ik1PTkhPQyI+PEZpZWxkIE5hbWU9Ik1BTUgiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVEVOTUgiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0icm93Z3VpZCIgVHlwZT0iR3VpZCIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iU0lOSFZJRU4iPjxGaWVsZCBOYW1lPSJNQVNWIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkhPIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRFTiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNQUxPUCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQSEFJIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJOR0FZU0lOSCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9Ik5PSVNJTkgiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRElBQ0hJIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkdISUNIVSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJOR0hJSE9DIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJyb3dndWlkIiBUeXBlPSJHdWlkIiAvPjwvVmlldz48VmlldyBOYW1lPSJIT0NQSEkiPjxGaWVsZCBOYW1lPSJNQVNWIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik5JRU5LSE9BIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkhPQ0tZIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iSE9DUEhJIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iU09USUVOREFET05HIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0icm93Z3VpZCIgVHlwZT0iR3VpZCIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+  </data>
 </root>

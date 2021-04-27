@@ -24,7 +24,7 @@ namespace DMDS
         }
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //gridControl.ShowRibbonPrintPreview();
+            //gridControl1.ShowRibbonPrintPreview();
         }
         
         private void Form1_Load(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace DMDS
         {
             // TODO: This line of code loads data into the 'dSVDataSet.LOP' table. You can move, or remove it, as needed.
             this.lOPTableAdapter.Fill(this.dSVDataSet.LOP);
-            gridControl1.DataSource = gIANGVIENBindingSource;
+            gridControl1.DataSource = lOPBindingSource;
         }
 
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
@@ -75,7 +75,7 @@ namespace DMDS
         {
             // TODO: This line of code loads data into the 'dSVDataSet.MONHOC' table. You can move, or remove it, as needed.
             this.mONHOCTableAdapter.Fill(this.dSVDataSet.MONHOC);
-            gridControl1.DataSource = sINHVIENBindingSource;
+            gridControl1.DataSource = mONHOCBindingSource;
         }
 
         private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
@@ -118,7 +118,6 @@ namespace DMDS
 
         private void barButtonItem12_ItemClick(object sender, ItemClickEventArgs e)
         {
-
         }
 
         private void bbiNew_ItemClick(object sender, ItemClickEventArgs e)
