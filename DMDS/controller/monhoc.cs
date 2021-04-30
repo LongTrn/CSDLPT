@@ -21,35 +21,6 @@ namespace DMDS.controller
 
         private MonhocController() { }
 
-        public bool Validate(string username, string pw)
-        {
-            string hashPass = EncodedPassword(pw);
-
-            string qr = "USP_Validate @userName , @Password ";
-
-            DataTable result = DataProvider.Instance.ExecuteQuery(qr, new object[] { username, hashPass });
-
-            return result.Rows.Count > 0;
-        }
-
-        public string EncodedPassword(string initial)
-        {
-            byte[] tmp = ASCIIEncoding.ASCII.GetBytes(initial);
-
-            byte[] hashData = new MD5CryptoServiceProvider().ComputeHash(tmp);
-
-            string hashPass = "";
-
-            foreach (byte item in hashData)
-            {
-                hashPass += item;
-
-            }
-
-            return hashPass;
-
-        }
-
         public Monhoc GetMonhocByMamh(string mamh)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Monhoc WHERE mamh = @mamh", new object[] { "CSDL" });
@@ -76,7 +47,7 @@ namespace DMDS.controller
             return null;
         }
 
-        public DataTable GetListAccount()
+        public DataTable GetListMonhoc()
         {
 
             string qr = "SELECT mamh, tenmh FROM dbo.Monhoc";
@@ -127,9 +98,9 @@ namespace DMDS.controller
 
         public bool InsertMonhoc(string mamh, string tenmh)
         {
-            string qr = string.Format("INSERT dbo.Monhoc ( mamh, tenmh) VALUES(N'@mamh',N'@tenmh')", new object[] { mamh, tenmh });
+            string qr = string.Format("EXEC SP_INSERT_MONHOC @mamh , @tenmh ");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { mamh, tenmh });
 
             return result > 0;
 
@@ -137,9 +108,9 @@ namespace DMDS.controller
 
         public bool UpdateMonhocByMamh(string mamhmoi, string mamh)
         {
-            string qr = string.Format("UPDATE dbo.Monhoc SET mamh = @mamhmoi WHERE mamh = @mamh", new object[] { "mamhmoi", "mamh" });
+            string qr = string.Format("UPDATE dbo.Monhoc SET mamh = @mamhmoi WHERE mamh = @mamh");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { "mamhmoi", "mamh" });
 
             return result > 0;
 
@@ -148,8 +119,7 @@ namespace DMDS.controller
         public bool UpdateMonhocByTenmh(string tenmh, string mamh)
         {
 
-            int result = DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.Monhoc SET Tenmh = @tenmh WHERE mamh = @mamh",
-                new object[] { "Cơ Sở Dữ liệu1", "CSDL" });
+            int result = DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.Monhoc SET Tenmh = @tenmh WHERE mamh = @mamh", new object[] { "Cơ Sở Dữ liệu1", "CSDL" });
 
             return result > 0;
 
@@ -157,23 +127,12 @@ namespace DMDS.controller
 
         public bool DeleteMonhoc(string mamh)
         {
-            string qr = string.Format("DELETE dbo.Monhoc WHERE mamh = @mamh", new object[] { mamh });
+            string qr = string.Format("DELETE dbo.Monhoc WHERE mamh = @mamh");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
-
-            return result > 0;
-
-        }
-
-        public bool ResetPassword(int id)
-        {
-            string qr = string.Format("UPDATE dbo.Monhoc SET Password = N'20720532132149213101239102231223249249135100218' WHERE id = {0}", id);
-
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { mamh });
 
             return result > 0;
 
         }
-
     }
 }
