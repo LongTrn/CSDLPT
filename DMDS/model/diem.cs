@@ -9,7 +9,7 @@ namespace DMDS.model
 {
     public class Diemm
     {
-        public Diemm (string masv, string mamh, int lan, int diem)
+        public Diemm (string masv, string mamh, int lan, float diem)
         {
             this.Masv = masv;
             this.Mamh = mamh;
@@ -22,8 +22,8 @@ namespace DMDS.model
         {
             this.Masv = row["masv"].ToString();
             this.Mamh = row["mamh"].ToString();
-            this.Lan = (int)row["lan"];
-            this.Diem = (int)row["diem"];
+            this.Lan = (int)Convert.ToInt32(row["lan"]);
+            this.Diem = (float)Convert.ToDouble(row["diem"]);
 
         }
 
@@ -33,7 +33,7 @@ namespace DMDS.model
 
         private int lan;
 
-        private int diem;
+        private float diem;
         
         public string Masv { get => masv; set => masv = value; }
 
@@ -41,6 +41,6 @@ namespace DMDS.model
         
         public int Lan { get => lan; set => lan = value; }
         
-        public int Diem { get => diem; set => diem = value; }
+        public float Diem { get => diem; set => diem = value; }
     }
 }

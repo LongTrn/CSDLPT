@@ -20,7 +20,7 @@ namespace DMDS.model
 
         private DataProvider() {; }
 
-        private string cnstr = @"Data Source=XPS2284\TRNLONGJ;Initial Catalog=QuanLyCuaHangMyPham;Integrated Security=True";
+        private string cnstr = @"Server=LONGTRNN\MSSQLSERVER01;Database=DSV;Trusted_Connection=True;";
 
         public DataTable ExecuteQuery(string query, object[] para = null)
         {
@@ -62,36 +62,46 @@ namespace DMDS.model
 
         public int ExecuteNonQuery(string query, object[] para = null)
         {
-            int data = 0;
-
-            using (SqlConnection cn = new SqlConnection(cnstr))
+            try
             {
-                cn.Open();
 
-                SqlCommand cm = new SqlCommand(query, cn);
+                int data = 0;
 
-                if (para != null)
+                using (SqlConnection cn = new SqlConnection(cnstr))
                 {
-                    string[] listPara = query.Split(' ');
+                    cn.Open();
 
-                    int i = 0;
+                    SqlCommand cm = new SqlCommand(query, cn);
 
-                    foreach (string item in listPara)
+                    if (para != null)
                     {
-                        if (item.Contains('@'))
+                        string[] listPara = query.Split(' ');
+
+                        int i = 0;
+
+                        foreach (string item in listPara)
                         {
-                            cm.Parameters.AddWithValue(item, para[i]);
-                            i++;
+                            if (item.Contains('@'))
+                            {
+                                cm.Parameters.AddWithValue(item, para[i]);
+                                i++;
+                            }
                         }
+
                     }
 
+                    data = cm.ExecuteNonQuery();
+
+                    cn.Close();
                 }
-                data = cm.ExecuteNonQuery();
 
-                cn.Close();
+                return data;
             }
-
-            return data;
+            catch (SqlException e)
+            {
+                Console.WriteLine("Loi: {0}", e.Message);
+            }
+            return -1;
         }
 
         public object ExecuteScalar(string query, object[] para = null)

@@ -85,9 +85,9 @@ namespace DMDS.controller
 
         public bool InsertLop(string malop, string tenlop)
         {
-            string qr = string.Format("INSERT dbo.Lop ( malop, tenlop ) VALUES(N'@malop', N'@tenlop')", new object[] { malop, tenlop });
+            string qr = string.Format("INSERT dbo.Lop ( malop, tenlop ) VALUES(N'@malop', N'@tenlop')");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { malop, tenlop });
 
             return result > 0;
 
@@ -95,9 +95,9 @@ namespace DMDS.controller
 
         public bool UpdateLopByMalop(string malop, string tenlop)
         {
-            string qr = string.Format("UPDATE dbo.Lop SET malop = @malop, tenlop = @tenlop WHERE mamh = @mamh", new object[] { malop, tenlop });
+            string qr = string.Format("UPDATE dbo.Lop SET malop = @malop, tenlop = @tenlop WHERE mamh = @mamh");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { malop, tenlop });
 
             return result > 0;
 
@@ -105,9 +105,9 @@ namespace DMDS.controller
 
         public bool DeleteLop(string malop)
         {
-            string qr = string.Format("DELETE dbo.Lop WHERE malop = @malop", new object[] { malop });
+            string qr = string.Format("DELETE dbo.Lop WHERE malop = @malop");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { malop });
 
             return result > 0;
 
