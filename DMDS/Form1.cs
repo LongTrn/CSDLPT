@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+using DMDS.controller;
+using DMDS.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +13,15 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars;
 using System.ComponentModel.DataAnnotations;
+using System.Data.SqlClient;
+using System.Globalization;
 
 namespace DMDS
 {
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        BindingSource bindingData = new BindingSource();
+
         public Form1()
         {
             InitializeComponent();
@@ -22,14 +29,16 @@ namespace DMDS
             // Fill the SqlDataSource asynchronously
             sqlDataSource1.FillAsync();
         }
-        void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            //gridControl1.ShowRibbonPrintPreview();
-        }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            // set enable or disable
+            // Accept btn
+            simpleButton9.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            // Cancel btn
+            simpleButton10.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            // Thoát ra btn
+            simpleButton4.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
         }
 
         private void gridControl1_DataSourceChanged(object sender, EventArgs e)
@@ -38,15 +47,70 @@ namespace DMDS
             gridView1.PopulateColumns();
             gridView1.BestFitColumns();
             bsiRecordsCount.Caption = "RECORDS : " + gridView1.RowCount;
-            //checkedComboBoxEdit1.Name
+        }
+        /*
+        void LoadCategory()
+        {
+            List<Category> listCategory = CategoryDAO.Instance.GetListCategory();
+            cbPhanLoai.DataSource = listCategory;
+            cbPhanLoai.DisplayMember = "nameCategory";
+        }
+         */
+
+        private DataTable LoadDiem ()
+        {
+            string query = "select * from diem";
+            DataTable data = new DataTable();
+
+            using (SqlConnection cn = new SqlConnection(cnstr))
+            {
+                cn.Open();
+
+                SqlCommand cm = new SqlCommand(query, cn);
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(cm))
+                {
+                    adapter.Fill(data);
+
+                }
+                cn.Close();
+            }
+
+            return data;
+            //gridControl1.DataSource = DataProvider.Instance.ExecuteQuery(qr);
+        }
+
+        private void enableActionButtonCreateNewForm()
+        {
+            // Accept btn
+            simpleButton9.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Default;
+            simpleButton9.Enabled = true;
+            // Cancel btn
+            simpleButton10.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Default;
+            simpleButton10.Enabled = true;
+            // Thoát ra btn
+            simpleButton4.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Default;
+            simpleButton4.Enabled = true;
+        }
+
+        private void disableActionButtonCreateNewForm()
+        {
+            // Accept btn
+            simpleButton9.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            simpleButton9.Enabled = false;
+            // Cancel btn
+            simpleButton10.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            simpleButton10.Enabled = false;
+            // Thoát ra btn
+            simpleButton4.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            simpleButton4.Enabled = false;
         }
 
         #region Danh Sach Cac Bang
 
         private void barButtonItem11_ItemClick(object sender, ItemClickEventArgs e)
         {
-            // TODO: This line of code loads data into the 'dSVDataSet.KHOA' table. You can move, or remove it, as needed.
-            this.kHOATableAdapter.Fill(this.dSVDataSet.KHOA);
+
             gridControl1.DataSource = kHOABindingSource;
         }
 
@@ -140,5 +204,48 @@ namespace DMDS
             gridView1.SetRowCellValue(e.RowHandle, "rowguid", Guid.NewGuid());
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+            //List<Monhoc> orderList = MonhocController.Instance.LoadOrderList();
+            
+            /*
+                enableActionButtonCreateNewForm();
+                SqlConnection connection = CreateConnectionSQL();
+                SqlCommand cmd;
+                SqlDataReader data;
+                String query, Output = "";
+                query = "insert into diem(masv, mamh, lan, diem) value (@masv, @mamh, @lan, @diem)";
+                cmd = new SqlCommand(query, connection);
+                data = cmd.ExecuteReader();
+                while(data.Read())
+                {
+                    String readData = "";
+                    for (int col = 0; col < data.FieldCount; col++)
+                    {
+                        readData += data.GetValue(col) -
+                    }
+                    Output += readData + "\n";
+                    //Output += data.GetValue(0) + " - " + data.GetValue(1) + "\n";
+                }
+                MessageBox.Show(Output);
+            */
+            gridView1.AddNewRow();
+            //gridControl1.DataSource = test();
+        }
+
+        private void simpleButton8_Click(object sender, EventArgs e)
+        {
+            gridView1.DeleteRow(gridView1.FocusedRowHandle);
+        }
     }
 }
