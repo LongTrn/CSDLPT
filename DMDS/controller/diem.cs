@@ -98,9 +98,9 @@ namespace DMDS.controller
 
         public bool InsertDiem (string masv, string mamh, float diem)
         {
-            string qr = string.Format("INSERT dbo.Diem ( masv, mamh, diem) VALUES(N'@masv',N'@mamh', @diem)", new object[] { masv, mamh, diem});
+            string qr = string.Format("INSERT dbo.Diem ( masv, mamh, diem) VALUES( @masv , @mamh , @diem )");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { masv, mamh, diem });
 
             return result > 0;
 
@@ -108,9 +108,9 @@ namespace DMDS.controller
 
         public bool UpdateMonhocByMamh(string mamhmoi, string mamh)
         {
-            string qr = string.Format("UPDATE dbo.Diem SET mamh = @mamhmoi WHERE mamh = @mamh", new object[] { "mamhmoi", "mamh" });
+            string qr = string.Format("UPDATE dbo.Diem SET mamh = @mamhmoi WHERE mamh = @mamh ");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { "mamhmoi", "mamh" });
 
             return result > 0;
 
@@ -118,19 +118,19 @@ namespace DMDS.controller
 
         public bool UpdateMonhocByTenmh(string tenmh, string mamh)
         {
+            string qr = "UPDATE dbo.Diem SET Tenmh = @tenmh WHERE mamh = @mamh ";
 
-            int result = DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.Diem SET Tenmh = @tenmh WHERE mamh = @mamh",
-                new object[] { "Cơ Sở Dữ liệu1", "CSDL" });
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { "Cơ Sở Dữ liệu1", "CSDL" });
 
             return result > 0;
 
         }
 
-        public bool DeleteMonhoc(string mamh)
+        public bool DeleteDiem(string mamh)
         {
-            string qr = string.Format("DELETE dbo.Diem WHERE mamh = @mamh", new object[] { mamh });
+            string qr = string.Format("DELETE dbo.Diem WHERE mamh = @mamh ");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { mamh });
 
             return result > 0;
 
