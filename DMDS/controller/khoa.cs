@@ -105,9 +105,9 @@ namespace DMDS.controller
 
         public bool InsertKhoa(string makh, string tenkh)
         {
-            string qr = string.Format("INSERT dbo.Khoa ( makh, tenkh) VALUES(N'@makh', N'@tenkh')", new object[] { makh, tenkh});
+            string qr = string.Format("EXEC SP_INSERT_KHOA @makh , @tenkh ");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { makh, tenkh });
 
             return result > 0;
 
@@ -115,9 +115,9 @@ namespace DMDS.controller
 
         public bool UpdateKhoaByMakh(string makh, string tenkh)
         {
-            string qr = string.Format("UPDATE dbo.Khoa SET makh = @makh, tenkh = @tenkh WHERE makh = @makh", new object[] { makh });
+            string qr = string.Format("UPDATE dbo.Khoa SET makh = @makh, tenkh = @tenkh WHERE makh = @makh");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { makh });
 
             return result > 0;
 
@@ -125,9 +125,9 @@ namespace DMDS.controller
 
         public bool DeleteKhoa(string makh)
         {
-            string qr = string.Format("DELETE dbo.Khoa WHERE makh = @makh", new object[] { makh });
+            string qr = string.Format("DELETE dbo.Khoa WHERE makh = @makh");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { makh });
 
             return result > 0;
 

@@ -37,7 +37,7 @@ namespace DMDS.controller
         public DataTable GetListLop()
         {
 
-            string qr = "SELECT malop, tenlop from dbo.Lop";
+            string qr = "SELECT malop, tenlop, makh from dbo.Lop";
 
             return DataProvider.Instance.ExecuteQuery(qr);
 
@@ -47,7 +47,7 @@ namespace DMDS.controller
         {
             List<Lop> list = new List<Lop>();
 
-            string qr = "SELECT malop, tenlop FROM dbo.Lop";
+            string qr = "SELECT malop, tenlop, makh FROM dbo.Lop";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(qr);
 
@@ -61,6 +61,24 @@ namespace DMDS.controller
 
             return list;
 
+        }
+
+        public DataTable GetListLopByMakh(string makh)
+        {
+            string qr = "";
+
+            if (makh == "ALLDEPARTMENT")
+            {
+                qr = "SELECT malop, tenlop, makh from dbo.Lop";
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+            else
+            {
+                qr = "SELECT malop, tenlop, makh from dbo.Lop WHERE makh = @makh";
+
+                return DataProvider.Instance.ExecuteQuery(qr, new object[] { makh });
+            }
         }
 
         public List<Lop> SearchLopByMaLop(string malop)
@@ -83,11 +101,11 @@ namespace DMDS.controller
 
         }
 
-        public bool InsertLop(string malop, string tenlop)
+        public bool InsertLop(string malop, string tenlop, string makh)
         {
-            string qr = string.Format("INSERT dbo.Lop ( malop, tenlop ) VALUES(N'@malop', N'@tenlop')");
+            string qr = string.Format("EXEC SP_INSERT_LOP @malop , @tenlop , @makh");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { malop, tenlop });
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { malop, tenlop, makh });
 
             return result > 0;
 

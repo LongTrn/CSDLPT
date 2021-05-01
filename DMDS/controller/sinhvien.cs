@@ -21,9 +21,9 @@ namespace DMDS.controller
 
         private SinhvienController() { }
 
-        public Diemm GetDiemByMamh(string masv)
+        public Diemm GetSinhvienByMasv(string masv)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Sinhvien WHERE masv = @masv", new object[] { "08VTA101" });
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Sinhvien WHERE masv = @masv ", new object[] { masv });
             
             foreach (DataRow item in data.Rows)
             {
@@ -37,17 +37,41 @@ namespace DMDS.controller
         public DataTable GetListSinhvien()
         {
 
-            string qr = "SELECT masv, ho, ten, malop, phai, ngaysinh, noisinh, ghichu, nghihoc from dbo.Sinhvien";
+            string qr = "SELECT masv, ho, ten, malop, phai, ngaysinh, noisinh, diachi, ghichu, nghihoc from dbo.Sinhvien";
 
             return DataProvider.Instance.ExecuteQuery(qr);
 
+        }
+
+        public DataTable GetListSinhvienByMalop(string malop, string makh)
+        {
+            string qr = "";
+            
+            if (malop == "ALLCLASS" && makh == "ALLDEPARTMENT")
+            {
+                qr = "SELECT masv, ho, ten, malop, phai, ngaysinh, noisinh, diachi, ghichu, nghihoc from dbo.Sinhvien";
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+            else if (malop == "ALLCLASS" && makh != "ALLDEPARTMENT")
+            {
+                qr = "SELECT masv, ho, ten, LOP.malop, phai, ngaysinh, noisinh, diachi, ghichu, nghihoc from dbo.Sinhvien INNER JOIN  DBO.LOP AS LOP ON SINHVIEN.MALOP = LOP.MALOP WHERE makh = @makh ";
+
+                return DataProvider.Instance.ExecuteQuery(qr, new object[] { makh });
+            }
+            else
+            {
+                qr = "SELECT masv, ho, ten, malop, phai, ngaysinh, noisinh, diachi, ghichu, nghihoc from dbo.Sinhvien WHERE malop = @malop ";
+
+                return DataProvider.Instance.ExecuteQuery(qr, new object[] { malop });
+            }
         }
 
         public List<Diemm> GetDiemList()
         {
             List<Diemm> list = new List<Diemm>();
 
-            string qr = "SELECT masv, ho, ten, malop, phai, ngaysinh, noisinh, ghichu, nghihoc FROM dbo.Sinhvien";
+            string qr = "SELECT masv, ho, ten, malop, phai, ngaysinh, noisinh, diachi, ghichu, nghihoc FROM dbo.Sinhvien";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(qr);
 
@@ -83,31 +107,34 @@ namespace DMDS.controller
 
         }
 
-        public bool InsertDiem(string masv, string ho, string ten, string malop, bool phai, DateTime ngaysinh, string noisinh)
+        public bool InsertSinhvien(string masv, string ho, string ten, string malop, bool phai)
         {
-            string qr = string.Format("INSERT dbo.Sinhvien ( masv, ho, ten, malop, phai, ngaysinh, noisinh) VALUES(N'@masv',N'@ho', N'@ten', N'@malop', @phai, @ngaysinh, @noisinh)", new object[] { masv, ho, ten, malop, phai, ngaysinh, noisinh });
+            int gioitinh = phai ? 1 : 0;
+            
+            //string qr = string.Format("INSERT dbo.Sinhvien ( masv, ho, ten, malop, phai) VALUES(N'@masv',N'@ho', N'@ten', N'@malop', @phai)", new object[] { masv, ho, ten, malop, gioitinh });
+            string qr = string.Format("INSERT dbo.Sinhvien ( masv, ho, ten, malop, phai) VALUES( @masv , @ho , @ten , @malop , @phai )");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { masv, ho, ten, malop, gioitinh });
 
             return result > 0;
 
         }
 
-        public bool UpdateMonhocByMamh(string masv, string ho, string ten, string malop, bool phai, DateTime ngaysinh, string noisinh, string ghichu, int nghihoc)
+        public bool UpdateMonhocByMamh(string masv, string ho, string ten, string malop, bool phai, DateTime ngaysinh, string noisinh, string diachi, string ghichu, int nghihoc)
         {
-            string qr = string.Format("UPDATE dbo.Sinhvien SET mamh = @mamhmoi, ho = @ho, ten = @ten, malop = @malop, phai = @phai, ngaysinh = @ngaysinh, noisinh = @noisinh, ghichu = @ghichu, nghihoc = @nghihoc  WHERE mamh = @mamh", new object[] { masv, ho, ten, malop, phai, ngaysinh, noisinh, ghichu, nghihoc });
+            string qr = string.Format("UPDATE dbo.Sinhvien SET mamh = @mamhmoi, ho = @ho, ten = @ten, malop = @malop, phai = @phai , ngaysinh = @ngaysinh , noisinh = @noisinh , diachi = @diachi , ghichu = @ghichu , nghihoc = @nghihoc  WHERE mamh = @mamh ");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { masv, ho, ten, malop, phai, ngaysinh, noisinh, diachi, ghichu, nghihoc });
 
             return result > 0;
 
         }
 
-        public bool DeleteMonhoc(string masv)
+        public bool DeleteSinhvien(string masv)
         {
-            string qr = string.Format("DELETE dbo.Sinhvien WHERE masv = @masv", new object[] { masv });
+            string qr = string.Format("DELETE dbo.Sinhvien WHERE masv = @masv ");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr);
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { masv });
 
             return result > 0;
 

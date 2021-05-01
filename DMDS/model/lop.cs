@@ -13,6 +13,7 @@ namespace DMDS.model
         {
             this.Malop = malop;
             this.Tenlop = tenlop;
+            this.Makh = makh;
 
         }
 
@@ -27,8 +28,12 @@ namespace DMDS.model
 
         private string tenlop;
 
+        private string makh;
+
         public string Malop { get => malop; set => malop = value; }
 
         public string Tenlop { get => tenlop; set => tenlop = value; }
+     
+        public string Makh { get => makh; set => makh = value; }
     }
 }
