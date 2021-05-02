@@ -21,13 +21,13 @@ namespace DMDS.controller
 
         private SinhvienController() { }
 
-        public Diemm GetSinhvienByMasv(string masv)
+        public Sinhvien GetSinhvienByMasv(string masv)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Sinhvien WHERE masv = @masv ", new object[] { masv });
             
             foreach (DataRow item in data.Rows)
             {
-                return new Diemm(item);
+                return new Sinhvien(item);
 
             }
 
@@ -107,14 +107,13 @@ namespace DMDS.controller
 
         }
 
-        public bool InsertSinhvien(string masv, string ho, string ten, string malop, bool phai)
+        public bool InsertSinhvien(string masv, string ho, string ten, string malop, bool gioitinh, string ngaysinh, string noisinh, string diachi)
         {
-            int gioitinh = phai ? 1 : 0;
+            int phai = gioitinh ? 1 : 0;
             
-            //string qr = string.Format("INSERT dbo.Sinhvien ( masv, ho, ten, malop, phai) VALUES(N'@masv',N'@ho', N'@ten', N'@malop', @phai)", new object[] { masv, ho, ten, malop, gioitinh });
-            string qr = string.Format("INSERT dbo.Sinhvien ( masv, ho, ten, malop, phai) VALUES( @masv , @ho , @ten , @malop , @phai )");
+            string qr = string.Format("INSERT dbo.Sinhvien ( masv, ho, ten, malop, phai, ngaysinh, noisinh, diachi, ghichu, nghihoc ) VALUES( @masv , @ho , @ten , @malop , @phai , @ngaysinh , @noisinh , @diachi , '', 0)");
 
-            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { masv, ho, ten, malop, gioitinh });
+            int result = DataProvider.Instance.ExecuteNonQuery(qr, new object[] { masv, ho, ten, malop, phai, ngaysinh, noisinh, diachi });
 
             return result > 0;
 

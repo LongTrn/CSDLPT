@@ -9,7 +9,7 @@ namespace DMDS.model
 {
     public class Sinhvien
     {
-        public Sinhvien(string masv, string ho, string ten, string malop, bool phai, DateTime ngaysinh, string noisinh, string ghichu, int nghihoc)
+        public Sinhvien(string masv, string ho, string ten, string malop, bool phai, DateTime ngaysinh, string noisinh, string ghichu, bool nghihoc)
         {
             this.Masv = masv;
             this.Ho = ho;
@@ -33,7 +33,7 @@ namespace DMDS.model
             this.Ngaysinh = (DateTime)row["ngaysinh"];
             this.Noisinh = row["noisinh"].ToString();
             this.Ghichu = row["ghichu"].ToString();
-            this.Nghihoc = (int)row["nghihoc"];
+            this.Nghihoc = (bool)row["nghihoc"];
 
         }
 
@@ -53,7 +53,7 @@ namespace DMDS.model
 
         private string ghichu;
         
-        private int nghihoc;
+        private bool nghihoc;
 
 
         public string Masv { get => masv; set => masv = value; }
@@ -72,6 +72,6 @@ namespace DMDS.model
 
         public string Ghichu { get => ghichu; set => ghichu = value; }
 
-        public int Nghihoc { get => nghihoc; set => nghihoc = value; }
+        public bool Nghihoc { get => nghihoc; set => nghihoc = value; }
     }
 }
