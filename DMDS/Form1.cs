@@ -221,11 +221,12 @@ namespace DMDS
             string malop = comboBox211.SelectedValue != null ? comboBox211.SelectedValue.ToString() : "ALLCLASS";
 
             DataTable Sinhvien = SinhvienController.Instance.GetListSinhvienByMalop(malop, makh);
+
             Sinhvien.Columns.Add(
             "hotenmasv",
             typeof(string),
             "ho + ' ' + ten + ' ' + masv");
-
+            
             cbStudent.DataSource = Sinhvien;
             cbStudent.DisplayMember = "hotenmasv";
             cbStudent.ValueMember = "masv";
@@ -324,6 +325,8 @@ namespace DMDS
         {
             if (TABLE != "DIEM")
             {
+                lbPlace.Text = "Nơi sinh";
+                lbAddress.Text = "Địa chỉ";
                 txtCode.ReadOnly = false;
                 txtName.ReadOnly = false;
                 txtPlace.ReadOnly = false;
@@ -331,13 +334,17 @@ namespace DMDS
             }
             else
             {
+                lbPlace.Text = "Môn học";
+                lbAddress.Text = "Điểm";
                 cbStudent.Visible = true;
                 lbStudent.Visible = true;
-                
+                lbTimes.Visible = true;
+
                 txtLastName.ReadOnly = true;
                 txtPlace.ReadOnly = true;
                 txtCode.ReadOnly = true;
                 txtName.ReadOnly = true;
+                txtTimes.Visible = true;
             }
 
             enableActionButtonCreateNewForm();
@@ -366,6 +373,7 @@ namespace DMDS
             lbLastName.Visible = false;
             lbPlace.Visible = false;
             lbBirthday.Visible = false;
+            lbTimes.Visible = false;
 
             cbStudent.Visible = false;
             txtDepartment.Visible = false;
@@ -375,6 +383,7 @@ namespace DMDS
             txtLastName.Visible = false;
             txtPlace.Visible = false;
             txtBirthday.Visible = false;
+            txtTimes.Visible = false;
             
 
 
@@ -552,11 +561,12 @@ namespace DMDS
             string ten = txtName.Text;
             string khoa = txtDepartment.Text;
             string lop = txtClass.Text;
+            int lan = Convert.ToInt32(Math.Round(txtTimes.Value, 0));
+            bool gioitinh = radGender != null && radGender.SelectedIndex > 0 ? radGender.Properties.Items[radGender.SelectedIndex].Value.ToString() == "True" : false;
             string diachi = txtAddress.Text;
             string ho = txtLastName.Text;
             string noisinh = txtPlace.Text;
             string ngaysinh = txtBirthday.Text;
-            bool gioitinh = radGender != null && radGender.SelectedIndex > 0 ? radGender.Properties.Items[radGender.SelectedIndex].Value.ToString() == "True" : false;
 
             bool success = false;
 
@@ -641,16 +651,24 @@ namespace DMDS
                     }
                     else if (TABLE == "DIEM")
                     {
-                        success = DiemController.Instance.InsertDiem(ma, noisinh, float.Parse(diachi));
-                        if (success)
+                        if (ma != "" && noisinh != "" && diachi != "")
                         {
-                            MessageBox.Show("Thêm Điểm mới thành công");
+                            MessageBox.Show("Add điểm: ma " + ma + " mh " + noisinh + " lan " + lan + " diem " + float.Parse(diachi));
+                            success = DiemController.Instance.InsertDiem(ma, noisinh, lan, float.Parse(diachi));
+                            if (success)
+                            {
+                                MessageBox.Show("Thêm Điểm mới thành công");
 
-                            gridControl1.DataSource = DiemController.Instance.GetListDiem();
+                                gridControl1.DataSource = DiemController.Instance.GetListDiem();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Thêm Điểm mới thất bại");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Thêm Điểm mới thất bại");
+                            MessageBox.Show("Điển các ô trống hợp lệ");
                         }
                     }
                     else { }
@@ -837,6 +855,26 @@ namespace DMDS
                 string malop = comboBox211.SelectedValue != null ? comboBox211.SelectedValue.ToString() : "ALLCLASS";
                 int lan = 0;
 
+                DataTable Sinhvien = SinhvienController.Instance.GetListSinhvienByMalop(malop, makh);
+
+                Sinhvien.Columns.Add(
+                    "hotenmasv",
+                    typeof(string),
+                    "ho + ' ' + ten + ' ' + masv");
+                
+                if (Sinhvien.Rows.Count <= 0)
+                {
+                    cbStudent.DataSource = null;
+                    cbStudent.SelectedText = "--Không Tồn Tại Sinh Viên--";
+                    cbStudent.SelectedItem = null;
+                }
+                else
+                {
+                    cbStudent.DataSource = Sinhvien;
+                    cbStudent.DisplayMember = "hotenmasv";
+                    cbStudent.ValueMember = "masv";
+
+                }
                 filterDiemTable(makh, malop, mamh, lan);
             }
 
@@ -851,15 +889,22 @@ namespace DMDS
 
         private void cbStudent_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string masv = cbStudent.SelectedValue.ToString();
-            if (masv != "")
+            string masv = "";
+             //? cbStudent.SelectedValue.ToString() : "";
+            //if (masv == "System.Data.DataRowView")
+            if (masv == "")
             {
-                if (masv != "System.Data.DataRowView")
+                if (cbStudent.SelectedValue != null)
                 {
-                    Sinhvien sinhvien = SinhvienController.Instance.GetSinhvienByMasv(masv);
-                    txtCode.Text = masv;
-                    txtName.Text = sinhvien.Ten;
-                    txtLastName.Text = sinhvien.Ho;
+                    masv = cbStudent.SelectedValue.ToString();
+                    if (masv != "System.Data.DataRowView")
+                    {
+                        //MessageBox.Show(masv);
+                        Sinhvien sinhvien = SinhvienController.Instance.GetSinhvienByMasv(masv);
+                        txtCode.Text = masv;
+                        txtName.Text = sinhvien.Ten;
+                        txtLastName.Text = sinhvien.Ho;
+                    }
                 }
             }
             else

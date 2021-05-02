@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.ConnectionParameters.MsSqlConnectionParameters msSqlConnectionParameters1 = new DevExpress.DataAccess.ConnectionParameters.MsSqlConnectionParameters();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.ConnectionParameters.MsSqlConnectionParameters msSqlConnectionParameters3 = new DevExpress.DataAccess.ConnectionParameters.MsSqlConnectionParameters();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter9 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter10 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter11 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter12 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
@@ -62,14 +62,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbDepartment = new System.Windows.Forms.Label();
-            this.txtCode = new DevExpress.XtraEditors.TextEdit();
-            this.lbCode = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
-            this.txtName = new DevExpress.XtraEditors.TextEdit();
-            this.txtDepartment = new DevExpress.XtraEditors.TextEdit();
-            this.txtClass = new DevExpress.XtraEditors.TextEdit();
-            this.lbClass = new System.Windows.Forms.Label();
+            this.lbStudent = new System.Windows.Forms.Label();
             this.lbGender = new System.Windows.Forms.Label();
             this.lbLastName = new System.Windows.Forms.Label();
             this.lbPlace = new System.Windows.Forms.Label();
@@ -80,6 +73,15 @@
             this.txtLastName = new DevExpress.XtraEditors.TextEdit();
             this.txtAddress = new DevExpress.XtraEditors.TextEdit();
             this.radGender = new DevExpress.XtraEditors.RadioGroup();
+            this.cbStudent = new System.Windows.Forms.ComboBox();
+            this.lbClass = new System.Windows.Forms.Label();
+            this.txtClass = new DevExpress.XtraEditors.TextEdit();
+            this.txtCode = new DevExpress.XtraEditors.TextEdit();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
+            this.txtDepartment = new DevExpress.XtraEditors.TextEdit();
+            this.lbDepartment = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
+            this.lbCode = new System.Windows.Forms.Label();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
@@ -150,24 +152,24 @@
             this.colrowguid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.simpleLabelItem2 = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.cbStudent = new System.Windows.Forms.ComboBox();
-            this.lbStudent = new System.Windows.Forms.Label();
+            this.lbTimes = new System.Windows.Forms.Label();
+            this.txtTimes = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDepartment.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtClass.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBirthday.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBirthday.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPlace.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLastName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGender.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtClass.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDepartment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
@@ -207,6 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimes)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -435,6 +438,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(52, 388);
             this.comboBox2.Name = "comboBox2";
@@ -458,22 +462,24 @@
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnCount = 6;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.998197F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.0006F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0002F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0002F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0002F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.0006F));
             this.tableLayoutPanel1.Controls.Add(this.lbStudent, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbGender, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbLastName, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lbPlace, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lbAddress, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbBirthday, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtBirthday, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtPlace, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtLastName, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtAddress, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.radGender, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbGender, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbLastName, 4, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lbPlace, 4, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lbAddress, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lbBirthday, 4, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtBirthday, 5, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtPlace, 5, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtLastName, 5, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtAddress, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.radGender, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.cbStudent, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbClass, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.txtClass, 1, 5);
@@ -483,6 +489,8 @@
             this.tableLayoutPanel1.Controls.Add(this.lbDepartment, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.lbName, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.lbCode, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lbTimes, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtTimes, 3, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -495,95 +503,19 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(742, 132);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // lbDepartment
+            // lbStudent
             // 
-            this.lbDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lbStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbDepartment.AutoSize = true;
-            this.lbDepartment.Location = new System.Drawing.Point(3, 78);
-            this.lbDepartment.Name = "lbDepartment";
-            this.lbDepartment.Size = new System.Drawing.Size(68, 26);
-            this.lbDepartment.TabIndex = 4;
-            this.lbDepartment.Text = "Khoa";
-            this.lbDepartment.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbDepartment.Visible = false;
-            // 
-            // txtCode
-            // 
-            this.txtCode.Location = new System.Drawing.Point(77, 29);
-            this.txtCode.MenuManager = this.ribbonControl;
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(290, 20);
-            this.txtCode.TabIndex = 0;
-            // 
-            // lbCode
-            // 
-            this.lbCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbCode.AutoSize = true;
-            this.lbCode.Location = new System.Drawing.Point(3, 26);
-            this.lbCode.Name = "lbCode";
-            this.lbCode.Size = new System.Drawing.Size(68, 26);
-            this.lbCode.TabIndex = 2;
-            this.lbCode.Text = "Mã";
-            this.lbCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbName
-            // 
-            this.lbName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(3, 52);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(68, 26);
-            this.lbName.TabIndex = 3;
-            this.lbName.Text = "Tên";
-            this.lbName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(77, 55);
-            this.txtName.MenuManager = this.ribbonControl;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(290, 20);
-            this.txtName.TabIndex = 1;
-            // 
-            // txtDepartment
-            // 
-            this.txtDepartment.Location = new System.Drawing.Point(77, 81);
-            this.txtDepartment.MenuManager = this.ribbonControl;
-            this.txtDepartment.Name = "txtDepartment";
-            this.txtDepartment.Properties.ReadOnly = true;
-            this.txtDepartment.Size = new System.Drawing.Size(290, 20);
-            this.txtDepartment.TabIndex = 5;
-            this.txtDepartment.Visible = false;
-            // 
-            // txtClass
-            // 
-            this.txtClass.Location = new System.Drawing.Point(77, 107);
-            this.txtClass.MenuManager = this.ribbonControl;
-            this.txtClass.Name = "txtClass";
-            this.txtClass.Properties.ReadOnly = true;
-            this.txtClass.Size = new System.Drawing.Size(290, 20);
-            this.txtClass.TabIndex = 7;
-            this.txtClass.Visible = false;
-            // 
-            // lbClass
-            // 
-            this.lbClass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbClass.AutoSize = true;
-            this.lbClass.Location = new System.Drawing.Point(3, 104);
-            this.lbClass.Name = "lbClass";
-            this.lbClass.Size = new System.Drawing.Size(68, 28);
-            this.lbClass.TabIndex = 6;
-            this.lbClass.Text = "Lớp";
-            this.lbClass.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbClass.Visible = false;
+            this.lbStudent.AutoSize = true;
+            this.lbStudent.Location = new System.Drawing.Point(3, 0);
+            this.lbStudent.Name = "lbStudent";
+            this.lbStudent.Size = new System.Drawing.Size(68, 27);
+            this.lbStudent.TabIndex = 22;
+            this.lbStudent.Text = "Sinh Viên";
+            this.lbStudent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbStudent.Visible = false;
             // 
             // lbGender
             // 
@@ -591,9 +523,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbGender.AutoSize = true;
-            this.lbGender.Location = new System.Drawing.Point(373, 0);
+            this.lbGender.Location = new System.Drawing.Point(447, 0);
             this.lbGender.Name = "lbGender";
-            this.lbGender.Size = new System.Drawing.Size(68, 26);
+            this.lbGender.Size = new System.Drawing.Size(68, 27);
             this.lbGender.TabIndex = 19;
             this.lbGender.Text = "Giới tính";
             this.lbGender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -605,7 +537,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbLastName.AutoSize = true;
-            this.lbLastName.Location = new System.Drawing.Point(373, 52);
+            this.lbLastName.Location = new System.Drawing.Point(447, 53);
             this.lbLastName.Name = "lbLastName";
             this.lbLastName.Size = new System.Drawing.Size(68, 26);
             this.lbLastName.TabIndex = 9;
@@ -619,7 +551,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbPlace.AutoSize = true;
-            this.lbPlace.Location = new System.Drawing.Point(373, 78);
+            this.lbPlace.Location = new System.Drawing.Point(447, 79);
             this.lbPlace.Name = "lbPlace";
             this.lbPlace.Size = new System.Drawing.Size(68, 26);
             this.lbPlace.TabIndex = 10;
@@ -633,7 +565,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAddress.AutoSize = true;
-            this.lbAddress.Location = new System.Drawing.Point(373, 26);
+            this.lbAddress.Location = new System.Drawing.Point(447, 27);
             this.lbAddress.Name = "lbAddress";
             this.lbAddress.Size = new System.Drawing.Size(68, 26);
             this.lbAddress.TabIndex = 8;
@@ -647,9 +579,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbBirthday.AutoSize = true;
-            this.lbBirthday.Location = new System.Drawing.Point(373, 104);
+            this.lbBirthday.Location = new System.Drawing.Point(447, 105);
             this.lbBirthday.Name = "lbBirthday";
-            this.lbBirthday.Size = new System.Drawing.Size(68, 28);
+            this.lbBirthday.Size = new System.Drawing.Size(68, 27);
             this.lbBirthday.TabIndex = 16;
             this.lbBirthday.Text = "Ngày sinh";
             this.lbBirthday.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -658,47 +590,47 @@
             // txtBirthday
             // 
             this.txtBirthday.EditValue = null;
-            this.txtBirthday.Location = new System.Drawing.Point(447, 107);
+            this.txtBirthday.Location = new System.Drawing.Point(521, 108);
             this.txtBirthday.MenuManager = this.ribbonControl;
             this.txtBirthday.Name = "txtBirthday";
             this.txtBirthday.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtBirthday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtBirthday.Size = new System.Drawing.Size(292, 20);
+            this.txtBirthday.Size = new System.Drawing.Size(218, 20);
             this.txtBirthday.TabIndex = 18;
             this.txtBirthday.Visible = false;
             // 
             // txtPlace
             // 
-            this.txtPlace.Location = new System.Drawing.Point(447, 81);
+            this.txtPlace.Location = new System.Drawing.Point(521, 82);
             this.txtPlace.MenuManager = this.ribbonControl;
             this.txtPlace.Name = "txtPlace";
-            this.txtPlace.Size = new System.Drawing.Size(292, 20);
+            this.txtPlace.Size = new System.Drawing.Size(218, 20);
             this.txtPlace.TabIndex = 17;
             this.txtPlace.Visible = false;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(447, 55);
+            this.txtLastName.Location = new System.Drawing.Point(521, 56);
             this.txtLastName.MenuManager = this.ribbonControl;
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(292, 20);
+            this.txtLastName.Size = new System.Drawing.Size(218, 20);
             this.txtLastName.TabIndex = 13;
             this.txtLastName.Visible = false;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(447, 29);
+            this.txtAddress.Location = new System.Drawing.Point(521, 30);
             this.txtAddress.MenuManager = this.ribbonControl;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(292, 20);
+            this.txtAddress.Size = new System.Drawing.Size(218, 20);
             this.txtAddress.TabIndex = 12;
             this.txtAddress.Visible = false;
             // 
             // radGender
             // 
-            this.radGender.Location = new System.Drawing.Point(447, 3);
+            this.radGender.Location = new System.Drawing.Point(521, 3);
             this.radGender.MenuManager = this.ribbonControl;
             this.radGender.Name = "radGender";
             this.radGender.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -712,9 +644,110 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "Nữ", true, "gioitinh", "radIsFemale")});
             this.radGender.Properties.Name = "radGender";
             this.radGender.Properties.Padding = new System.Windows.Forms.Padding(4, 2, 4, 4);
-            this.radGender.Size = new System.Drawing.Size(292, 20);
+            this.radGender.Size = new System.Drawing.Size(218, 20);
             this.radGender.TabIndex = 20;
             this.radGender.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
+            // 
+            // cbStudent
+            // 
+            this.cbStudent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStudent.FormattingEnabled = true;
+            this.cbStudent.Location = new System.Drawing.Point(77, 3);
+            this.cbStudent.Name = "cbStudent";
+            this.cbStudent.Size = new System.Drawing.Size(216, 21);
+            this.cbStudent.TabIndex = 21;
+            this.cbStudent.Visible = false;
+            this.cbStudent.SelectedIndexChanged += new System.EventHandler(this.cbStudent_SelectedIndexChanged);
+            // 
+            // lbClass
+            // 
+            this.lbClass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbClass.AutoSize = true;
+            this.lbClass.Location = new System.Drawing.Point(3, 105);
+            this.lbClass.Name = "lbClass";
+            this.lbClass.Size = new System.Drawing.Size(68, 27);
+            this.lbClass.TabIndex = 6;
+            this.lbClass.Text = "Lớp";
+            this.lbClass.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbClass.Visible = false;
+            // 
+            // txtClass
+            // 
+            this.txtClass.Location = new System.Drawing.Point(77, 108);
+            this.txtClass.MenuManager = this.ribbonControl;
+            this.txtClass.Name = "txtClass";
+            this.txtClass.Properties.ReadOnly = true;
+            this.txtClass.Size = new System.Drawing.Size(216, 20);
+            this.txtClass.TabIndex = 7;
+            this.txtClass.Visible = false;
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(77, 30);
+            this.txtCode.MenuManager = this.ribbonControl;
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(216, 20);
+            this.txtCode.TabIndex = 0;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(77, 56);
+            this.txtName.MenuManager = this.ribbonControl;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(216, 20);
+            this.txtName.TabIndex = 1;
+            // 
+            // txtDepartment
+            // 
+            this.txtDepartment.Location = new System.Drawing.Point(77, 82);
+            this.txtDepartment.MenuManager = this.ribbonControl;
+            this.txtDepartment.Name = "txtDepartment";
+            this.txtDepartment.Properties.ReadOnly = true;
+            this.txtDepartment.Size = new System.Drawing.Size(216, 20);
+            this.txtDepartment.TabIndex = 5;
+            this.txtDepartment.Visible = false;
+            // 
+            // lbDepartment
+            // 
+            this.lbDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbDepartment.AutoSize = true;
+            this.lbDepartment.Location = new System.Drawing.Point(3, 79);
+            this.lbDepartment.Name = "lbDepartment";
+            this.lbDepartment.Size = new System.Drawing.Size(68, 26);
+            this.lbDepartment.TabIndex = 4;
+            this.lbDepartment.Text = "Khoa";
+            this.lbDepartment.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbDepartment.Visible = false;
+            // 
+            // lbName
+            // 
+            this.lbName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(3, 53);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(68, 26);
+            this.lbName.TabIndex = 3;
+            this.lbName.Text = "Tên";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbCode
+            // 
+            this.lbCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbCode.AutoSize = true;
+            this.lbCode.Location = new System.Drawing.Point(3, 27);
+            this.lbCode.Name = "lbCode";
+            this.lbCode.Size = new System.Drawing.Size(68, 26);
+            this.lbCode.TabIndex = 2;
+            this.lbCode.Text = "Mã";
+            this.lbCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // layoutControlGroup2
             // 
@@ -967,6 +1000,7 @@
             // 
             // comboBox21
             // 
+            this.comboBox21.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox21.FormattingEnabled = true;
             this.comboBox21.Location = new System.Drawing.Point(52, 413);
             this.comboBox21.Name = "comboBox21";
@@ -976,6 +1010,7 @@
             // 
             // comboBox211
             // 
+            this.comboBox211.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox211.FormattingEnabled = true;
             this.comboBox211.Location = new System.Drawing.Point(437, 413);
             this.comboBox211.Name = "comboBox211";
@@ -1188,29 +1223,29 @@
             // sqlDataSource1
             // 
             this.sqlDataSource1.ConnectionName = "DSVConnectionString";
-            msSqlConnectionParameters1.AuthorizationType = DevExpress.DataAccess.ConnectionParameters.MsSqlAuthorizationType.Windows;
-            msSqlConnectionParameters1.DatabaseName = "DSV";
-            msSqlConnectionParameters1.ServerName = "LONGTRNN\\MSSQLSERVER01";
-            this.sqlDataSource1.ConnectionParameters = msSqlConnectionParameters1;
+            msSqlConnectionParameters3.AuthorizationType = DevExpress.DataAccess.ConnectionParameters.MsSqlAuthorizationType.Windows;
+            msSqlConnectionParameters3.DatabaseName = "DSV";
+            msSqlConnectionParameters3.ServerName = "LONGTRNN\\MSSQLSERVER01";
+            this.sqlDataSource1.ConnectionParameters = msSqlConnectionParameters3;
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "SP_INSERT_DIEM";
-            queryParameter1.Name = "@MASV";
-            queryParameter1.Type = typeof(string);
-            queryParameter2.Name = "@MAMH";
-            queryParameter2.Type = typeof(string);
-            queryParameter3.Name = "@LAN";
-            queryParameter3.Type = typeof(short);
-            queryParameter3.ValueInfo = "0";
-            queryParameter4.Name = "@DIEM";
-            queryParameter4.Type = typeof(double);
-            queryParameter4.ValueInfo = "0";
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.Parameters.Add(queryParameter2);
-            storedProcQuery1.Parameters.Add(queryParameter3);
-            storedProcQuery1.Parameters.Add(queryParameter4);
-            storedProcQuery1.StoredProcName = "SP_INSERT_DIEM";
+            storedProcQuery3.Name = "SP_INSERT_DIEM";
+            queryParameter9.Name = "@MASV";
+            queryParameter9.Type = typeof(string);
+            queryParameter10.Name = "@MAMH";
+            queryParameter10.Type = typeof(string);
+            queryParameter11.Name = "@LAN";
+            queryParameter11.Type = typeof(short);
+            queryParameter11.ValueInfo = "0";
+            queryParameter12.Name = "@DIEM";
+            queryParameter12.Type = typeof(double);
+            queryParameter12.ValueInfo = "0";
+            storedProcQuery3.Parameters.Add(queryParameter9);
+            storedProcQuery3.Parameters.Add(queryParameter10);
+            storedProcQuery3.Parameters.Add(queryParameter11);
+            storedProcQuery3.Parameters.Add(queryParameter12);
+            storedProcQuery3.StoredProcName = "SP_INSERT_DIEM";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery3});
             this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlNQX0lOU0VSVF9ESUVNIiAvP" +
     "jwvRGF0YVNldD4=";
             // 
@@ -1345,29 +1380,33 @@
             this.simpleLabelItem2.Size = new System.Drawing.Size(746, 17);
             this.simpleLabelItem2.TextSize = new System.Drawing.Size(50, 20);
             // 
-            // cbStudent
+            // lbTimes
             // 
-            this.cbStudent.FormattingEnabled = true;
-            this.cbStudent.Location = new System.Drawing.Point(77, 3);
-            this.cbStudent.Name = "cbStudent";
-            this.cbStudent.Size = new System.Drawing.Size(290, 21);
-            this.cbStudent.TabIndex = 21;
-            this.cbStudent.Visible = false;
-            this.cbStudent.SelectedIndexChanged += new System.EventHandler(this.cbStudent_SelectedIndexChanged);
-            // 
-            // lbStudent
-            // 
-            this.lbStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lbTimes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbStudent.AutoSize = true;
-            this.lbStudent.Location = new System.Drawing.Point(3, 0);
-            this.lbStudent.Name = "lbStudent";
-            this.lbStudent.Size = new System.Drawing.Size(68, 26);
-            this.lbStudent.TabIndex = 22;
-            this.lbStudent.Text = "Sinh Viên";
-            this.lbStudent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbStudent.Visible = false;
+            this.lbTimes.AutoSize = true;
+            this.lbTimes.Location = new System.Drawing.Point(299, 27);
+            this.lbTimes.Name = "lbTimes";
+            this.lbTimes.Size = new System.Drawing.Size(68, 26);
+            this.lbTimes.TabIndex = 23;
+            this.lbTimes.Text = "Số Lần";
+            this.lbTimes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTimes.Visible = false;
+            // 
+            // txtTimes
+            // 
+            this.txtTimes.Location = new System.Drawing.Point(373, 30);
+            this.txtTimes.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.txtTimes.Name = "txtTimes";
+            this.txtTimes.Size = new System.Drawing.Size(68, 20);
+            this.txtTimes.TabIndex = 24;
+            this.txtTimes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTimes.Visible = false;
             // 
             // Form1
             // 
@@ -1386,16 +1425,16 @@
             this.layoutControl2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDepartment.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtClass.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBirthday.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBirthday.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPlace.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLastName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGender.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtClass.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDepartment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
@@ -1435,6 +1474,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1558,5 +1598,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private System.Windows.Forms.Label lbStudent;
         private System.Windows.Forms.ComboBox cbStudent;
+        private System.Windows.Forms.Label lbTimes;
+        private System.Windows.Forms.NumericUpDown txtTimes;
     }
 }
