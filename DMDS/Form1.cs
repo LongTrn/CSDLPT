@@ -59,13 +59,15 @@ namespace DMDS
             {
                 enableNonActionButtonCreateNewForm();
             }
+
+
             if (TABLE == "LOP")
             {
-                layoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
-                
                 lbDepartment.Visible = true;
 
                 txtDepartment.Visible = true;
+                
+                layoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                 
                 string textDepartment = comboBox2.SelectedValue.ToString();
                 
@@ -78,16 +80,27 @@ namespace DMDS
 
             }
             else if (TABLE == "SINHVIEN")
-            {
-                layoutControlItem13.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
-                layoutControlItem16.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
-                
+            {   
                 lbDepartment.Visible = true;
                 lbClass.Visible = true;
+                lbGender.Visible = true;
+                lbAddress.Visible = true;
+                lbLastName.Visible = true;
+                lbPlace.Visible = true;
+                lbBirthday.Visible = true;
 
                 txtDepartment.Visible = true;
                 txtClass.Visible = true;
-                
+                radGender.Visible = true;
+                txtAddress.Visible = true;
+                txtLastName.Visible = true;
+                txtPlace.Visible = true;
+                txtBirthday.Visible = true;
+
+                // Get data from comboBox to assign to Code and Class value
+                layoutControlItem13.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                layoutControlItem16.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+
                 string textDepartment = comboBox21.SelectedValue.ToString();
                 string textClass = comboBox211.SelectedValue.ToString();
                 
@@ -104,6 +117,53 @@ namespace DMDS
                 txtDepartment.Text = textDepartment;
                 txtClass.Text = textClass;
             }
+            else if ( TABLE == "DIEM")
+            {
+                lbDepartment.Visible = true;
+                lbClass.Visible = true;
+
+                txtDepartment.Visible = true;
+                txtClass.Visible = true;
+
+                // Get data from comboBox to assign to Code and Class value
+                layoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                layoutControlItem13.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                layoutControlItem16.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                string textDepartment = comboBox21.SelectedValue != null?comboBox21.SelectedValue.ToString() : "";
+                string textClass = comboBox211.SelectedValue != null?comboBox211.SelectedValue.ToString(): "";
+
+                if (textDepartment == "ALLDEPARTMENT")
+                {
+                    textDepartment = "";
+                }
+
+                if (textClass == "ALLCLASS")
+                {
+                    textClass = "";
+                }
+
+                txtDepartment.Text = textDepartment;
+                txtClass.Text = textClass;
+
+                lbLastName.Visible = true;
+                lbPlace.Visible = true;
+                lbAddress.Visible = true;
+                txtAddress.Visible = true;
+                txtLastName.Visible = true;
+                txtLastName.ReadOnly = true;
+                txtPlace.Visible = true;
+                txtPlace.ReadOnly = true;
+
+                lbPlace.Text = "Môn học";
+                lbAddress.Text = "Điểm";
+
+                string textSubject = comboBox2.SelectedValue.ToString();
+                if (textSubject == "ALLSUBJECT")
+                {
+                    textSubject = "";
+                }
+                txtPlace.Text = textSubject;
+            }
 
             if (STATEFORM == "OPENFORM")
             {
@@ -119,6 +179,7 @@ namespace DMDS
         
         void LoadLop()
         {
+            layoutControlItem3.Text = "KHOA"; 
             DataTable Khoa = KhoaController.Instance.GetListKhoa();
             Khoa = addAllCategory(Khoa, "makh", "ALLDEPARTMENT", "tenkh", "Tất Cả Khoa");
 
@@ -144,6 +205,34 @@ namespace DMDS
             
             comboBox21.ValueMember = "makh";
             comboBox211.ValueMember = "malop";
+        }
+
+        void LoadDiem()
+        {
+            layoutControlItem3.Text = "MÔN HỌC";
+            DataTable Monhoc = MonhocController.Instance.GetListMonhoc();
+            Monhoc = addAllCategory(Monhoc, "mamh", "ALLSUBJECT", "tenmh", "Tất Cả Môn học");
+
+            comboBox2.DataSource = Monhoc;
+            comboBox2.DisplayMember = "tenmh";
+            comboBox2.ValueMember = "mamh";
+
+            string makh = comboBox21.SelectedValue != null ? comboBox21.SelectedValue.ToString() : "ALLDEPARTMENT";
+            string malop = comboBox211.SelectedValue != null ? comboBox211.SelectedValue.ToString() : "ALLCLASS";
+
+            DataTable Sinhvien = SinhvienController.Instance.GetListSinhvienByMalop(malop, makh);
+            Sinhvien.Columns.Add(
+            "hotenmasv",
+            typeof(string),
+            "ho + ' ' + ten + ' ' + masv");
+
+            cbStudent.DataSource = Sinhvien;
+            cbStudent.DisplayMember = "hotenmasv";
+            cbStudent.ValueMember = "masv";
+            cbStudent.SelectedIndex = 1;
+
+
+            LoadSinhvien();
         }
 
         DataTable addAllCategory(DataTable table, string keyma, string ma, string keyten, string ten)
@@ -233,6 +322,24 @@ namespace DMDS
 
         private void openForm()
         {
+            if (TABLE != "DIEM")
+            {
+                txtCode.ReadOnly = false;
+                txtName.ReadOnly = false;
+                txtPlace.ReadOnly = false;
+                txtLastName.ReadOnly = false;
+            }
+            else
+            {
+                cbStudent.Visible = true;
+                lbStudent.Visible = true;
+                
+                txtLastName.ReadOnly = true;
+                txtPlace.ReadOnly = true;
+                txtCode.ReadOnly = true;
+                txtName.ReadOnly = true;
+            }
+
             enableActionButtonCreateNewForm();
             disableNonActionButtonCreateNewForm();
             layoutControlGroup2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
@@ -250,12 +357,27 @@ namespace DMDS
             layoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             layoutControlItem13.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             layoutControlItem16.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-
+            
+            lbStudent.Visible = false;
             lbDepartment.Visible = false;
             lbClass.Visible = false;
+            lbGender.Visible = false;
+            lbAddress.Visible = false;
+            lbLastName.Visible = false;
+            lbPlace.Visible = false;
+            lbBirthday.Visible = false;
 
-            txtClass.Visible = false;
+            cbStudent.Visible = false;
             txtDepartment.Visible = false;
+            txtClass.Visible = false;
+            radGender.Visible = false;
+            txtAddress.Visible = false;
+            txtLastName.Visible = false;
+            txtPlace.Visible = false;
+            txtBirthday.Visible = false;
+            
+
+
         }
 
         #endregion
@@ -280,6 +402,7 @@ namespace DMDS
             {
                 LoadLop();
                 string makh = comboBox2.SelectedValue.ToString();
+                
                 gridControl1.DataSource = LopController.Instance.GetListLopByMakh(makh);
             }
         }
@@ -313,6 +436,8 @@ namespace DMDS
             TABLE = "DIEM";
             if (TABLE == "DIEM")
             {
+                LoadDiem();
+
                 gridControl1.DataSource = DiemController.Instance.GetListDiem();
             }
         }
@@ -365,7 +490,6 @@ namespace DMDS
 
         private void simpleButton7_Click(object sender, EventArgs e)
         {
-            //gridView1.AddNewRow();
             STATEFORM = "OPENFORM";
             openForm();
             txtCode.Focus();
@@ -428,6 +552,13 @@ namespace DMDS
             string ten = txtName.Text;
             string khoa = txtDepartment.Text;
             string lop = txtClass.Text;
+            string diachi = txtAddress.Text;
+            string ho = txtLastName.Text;
+            string noisinh = txtPlace.Text;
+            string ngaysinh = txtBirthday.Text;
+            bool gioitinh = radGender != null && radGender.SelectedIndex > 0 ? radGender.Properties.Items[radGender.SelectedIndex].Value.ToString() == "True" : false;
+
+            bool success = false;
 
             if (ma != "" && ten != "")
             {
@@ -440,34 +571,87 @@ namespace DMDS
                 {
                     if (TABLE == "KHOA")
                     {
-                        KhoaController.Instance.InsertKhoa(ma, ten);
+                        success = KhoaController.Instance.InsertKhoa(ma, ten);
+                        if (success)
+                        {
+                            MessageBox.Show("Thêm Khoa mới thành công");
+
+                            gridControl1.DataSource = KhoaController.Instance.GetListKhoa();
+                        }
+                        else 
+                        { 
+                            MessageBox.Show("Thêm Khoa mới thất bại"); 
+                        }
                     }
                     else if (TABLE == "LOP" && khoa != "")
                     {
-                        LopController.Instance.InsertLop(ma, ten, khoa);
-                    }
-                    else if (TABLE == "SINHVIEN" && khoa != "" && lop != "")
-                    {
-                        bool success = SinhvienController.Instance.InsertSinhvien(ma, "ho", ten, lop, true);
+                        success = LopController.Instance.InsertLop(ma, ten, khoa);
                         if (success)
                         {
-                            MessageBox.Show("Insert isSuccessful: " + success);
+                            MessageBox.Show("Thêm Lớp mới thành công");
                             
-                            // Reload DataSource
-                            LoadSinhvien();
-                            string malop = comboBox211.SelectedValue != null ? comboBox211.SelectedValue.ToString() : "ALLCLASS";
-
-                            gridControl1.DataSource = SinhvienController.Instance.GetListSinhvienByMalop(malop, "ALLDEPARTMENT");
+                            LoadLop();
+                            string makh = comboBox2.SelectedValue.ToString();
+                            
+                            gridControl1.DataSource = LopController.Instance.GetListLopByMakh(makh);
                         }
+                        else 
+                        { 
+                            MessageBox.Show("Thêm Lớp mới thất bại"); 
+                        }
+                    }
+                    else if (TABLE == "SINHVIEN")
+                    {
+                        if (khoa != "" && lop != "" && khoa != "ALLDEPARTMENT" && lop != "ALLCLASS" && diachi != "" && ho != "" && noisinh != "" && ngaysinh != "")
+                        {
+                            success = SinhvienController.Instance.InsertSinhvien(ma, ho, ten, lop, gioitinh, ngaysinh, noisinh, diachi);
+                            if (success)
+                            {
+                                MessageBox.Show("Thêm Sinh Viên mới thành công");
 
+                                // Reload DataSource
+                                LoadSinhvien();
+                                string malop = comboBox211.SelectedValue != null ? comboBox211.SelectedValue.ToString() : "ALLCLASS";
+
+                                gridControl1.DataSource = SinhvienController.Instance.GetListSinhvienByMalop(malop, "ALLDEPARTMENT");
+                            }
+                            else 
+                            { 
+                                MessageBox.Show("Thêm Sinh Viên mới thất bại"); 
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Chọn Khoa hoặc Lớp cụ thể");
+                        }
                     }
                     else if (TABLE == "MONHOC")
                     {
-                        MonhocController.Instance.InsertMonhoc(ma, ten);
+                        success = MonhocController.Instance.InsertMonhoc(ma, ten);
+                        if (success)
+                        {
+                            MessageBox.Show("Thêm Môn học mới thành công");
+
+                            gridControl1.DataSource = MonhocController.Instance.GetListMonhoc();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thêm Môn học mới thất bại");
+                        }
                     }
                     else if (TABLE == "DIEM")
                     {
-                        DiemController.Instance.InsertDiem("masv", "mamh", 0);
+                        success = DiemController.Instance.InsertDiem(ma, noisinh, float.Parse(diachi));
+                        if (success)
+                        {
+                            MessageBox.Show("Thêm Điểm mới thành công");
+
+                            gridControl1.DataSource = DiemController.Instance.GetListDiem();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thêm Điểm mới thất bại");
+                        }
                     }
                     else { }
 
@@ -507,32 +691,181 @@ namespace DMDS
 
         #region Filter lần lượt Lớp Với Sinh viên theo điều kiện Khoa và Lớp
 
+        void filterDiemTable (string makh, string malop, string mamh, int lan)
+        {
+            DataTable Diem = DiemController.Instance.GetListDiem();
+
+            if (mamh == "ALLSUBJECT" && makh == "ALLDEPARTMENT" && malop == "ALLCLASS")
+            {
+                Diem = DiemController.Instance.GetListDiemByLan(lan);
+            }
+            else if (mamh != "ALLSUBJECT" && makh == "ALLDEPARTMENT" && malop == "ALLCLASS" )
+            {
+                if (mamh != "")
+                {
+                    Diem = DiemController.Instance.GetListDiemByMamh(mamh, lan);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn Môn Học cụ thể");
+                }
+            }
+            else if (mamh == "ALLSUBJECT" && makh != "ALLDEPARTMENT" && malop == "ALLCLASS")
+            {
+                if (makh != "")
+                {
+                    Diem = DiemController.Instance.GetListDiemByMakh(makh, lan);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn Khoa cụ thể");
+                }
+            }
+            else if (mamh == "ALLSUBJECT" && makh == "ALLDEPARTMENT" && malop != "ALLCLASS")
+            {
+                if (malop != "")
+                {
+                    Diem = DiemController.Instance.GetListDiemByMalop(malop, lan);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn Lớp cụ thể");
+                }
+            }
+            else if (mamh != "ALLSUBJECT" && makh != "ALLDEPARTMENT" && malop == "ALLCLASS" )
+            {
+                if (mamh != "" && makh != "")
+                {
+                    Diem = DiemController.Instance.GetListDiemByMakhMamh(makh, mamh, lan);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn Môn Học hay Khoa cụ thể");
+                }
+            }
+            else if (mamh == "ALLSUBJECT" && makh != "ALLDEPARTMENT" && malop != "ALLCLASS")
+            {
+                if (makh != "" && malop != "")
+                {
+                    Diem = DiemController.Instance.GetListDiemByMakhMalop(makh, malop, lan);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn Khoa hay Lớp cụ thể");
+                }
+        }
+            else if (mamh != "ALLSUBJECT" && makh == "ALLDEPARTMENT" && malop != "ALLCLASS")
+            {
+                if (malop != "" && mamh != "")
+                {
+                    Diem = DiemController.Instance.GetListDiemByMalopMamh(malop, mamh, lan);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn Môn Học hay Lớp cụ thể");
+                }
+        }
+            else if (mamh != "ALLSUBJECT" && makh != "ALLDEPARTMENT" && malop != "ALLCLASS" && mamh != "" && makh != "" && malop != "")
+            {
+                if (makh != "" && mamh != "" && malop != "")
+                {
+                    Diem = DiemController.Instance.GetListDiemByMakhMalopMamh(makh, malop, mamh, lan);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn Môn Học hay Khoa, Lớp cụ thể");
+                }
+            }
+            gridControl1.DataSource = Diem;
+        }
+
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string makh = comboBox2.SelectedValue.ToString();
+            if (TABLE == "KHOA")
+            {
+                string makh = comboBox2.SelectedValue.ToString();
 
-            gridControl1.DataSource = LopController.Instance.GetListLopByMakh(makh);
+                gridControl1.DataSource = LopController.Instance.GetListLopByMakh(makh);
+            }
+            else if (TABLE == "DIEM")
+            {
+                string mamh = comboBox2.SelectedValue.ToString();
+                string makh = comboBox21.SelectedValue != null ? comboBox21.SelectedValue.ToString() : "ALLDEPARTMENT";
+                string malop = comboBox211.SelectedValue != null ? comboBox211.SelectedValue.ToString() : "ALLCLASS";
+                int lan = 0;
+                filterDiemTable(makh, malop, mamh, lan);
+            }
         }
 
         private void comboBox21_SelectedValueChanged(object sender, EventArgs e)
         {
-            string makh = comboBox21.SelectedValue.ToString();
+            if (TABLE == "SINHVIEN")
+            {
+                string makh = comboBox21.SelectedValue.ToString();
 
-            DataTable Lop = LopController.Instance.GetListLopByMakh(makh);
-            Lop = addAllCategory(Lop, "malop", "ALLCLASS", "tenlop", "Tất Cả Lớp");
-            comboBox211.DataSource = Lop;
+                DataTable Lop = LopController.Instance.GetListLopByMakh(makh);
+                Lop = addAllCategory(Lop, "malop", "ALLCLASS", "tenlop", "Tất Cả Lớp");
+                comboBox211.DataSource = Lop;
+            }
+            else if (TABLE == "DIEM")
+            {
+                string makh = comboBox21.SelectedValue.ToString();
+
+                DataTable Lop = LopController.Instance.GetListLopByMakh(makh);
+                Lop = addAllCategory(Lop, "malop", "ALLCLASS", "tenlop", "Tất Cả Lớp");
+                comboBox211.DataSource = Lop;
+
+                string mamh = comboBox2.SelectedValue.ToString();
+                string malop = comboBox211.SelectedValue != null ? comboBox211.SelectedValue.ToString() : "ALLCLASS";
+                int lan = 0;
+                filterDiemTable(makh, malop, mamh, lan);
+            }
         }
 
         private void comboBox211_SelectedValueChanged(object sender, EventArgs e)
         {
-            string makh = comboBox21.SelectedValue.ToString();
-            string malop = comboBox211.SelectedValue.ToString();
-            gridControl1.DataSource = SinhvienController.Instance.GetListSinhvienByMalop(malop, makh);
-            
+            if (TABLE == "SINHVIEN")
+            {
+                string makh = comboBox21.SelectedValue.ToString();
+                string malop = comboBox211.SelectedValue.ToString();
+                gridControl1.DataSource = SinhvienController.Instance.GetListSinhvienByMalop(malop, makh);
+            }
+            else if (TABLE == "DIEM")
+            {
+                string mamh = comboBox2.SelectedValue.ToString();
+                string makh = comboBox21.SelectedValue != null ? comboBox21.SelectedValue.ToString() : "ALLDEPARTMENT";
+                string malop = comboBox211.SelectedValue != null ? comboBox211.SelectedValue.ToString() : "ALLCLASS";
+                int lan = 0;
+
+                filterDiemTable(makh, malop, mamh, lan);
+            }
+
+
+        }
+
+        private void radioGroup1_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
 
         #endregion
 
-        
+        private void cbStudent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string masv = cbStudent.SelectedValue.ToString();
+            if (masv != "")
+            {
+                if (masv != "System.Data.DataRowView")
+                {
+                    Sinhvien sinhvien = SinhvienController.Instance.GetSinhvienByMasv(masv);
+                    txtCode.Text = masv;
+                    txtName.Text = sinhvien.Ten;
+                    txtLastName.Text = sinhvien.Ho;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy sinh viên");
+            }
+        }
     }
 }

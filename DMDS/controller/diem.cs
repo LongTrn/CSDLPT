@@ -49,18 +49,26 @@ namespace DMDS.controller
 
         public DataTable GetListDiem()
         {
-
-            string qr = "SELECT masv, mamh, lan, diem FROM dbo.Diem";
+            string qr = @"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh";
 
             return DataProvider.Instance.ExecuteQuery(qr);
-
         }
 
         public List<Diemm> GetDiemList()
         {
             List<Diemm> list = new List<Diemm>();
 
-            string qr = "SELECT * FROM dbo.Diem";
+            string qr = @"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(qr);
 
@@ -73,6 +81,246 @@ namespace DMDS.controller
             }
 
             return list;
+
+        }
+
+        public DataTable GetListDiemByLan(int lan)
+        {
+            if (lan > 0)
+            {
+                string qr = String.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                                FROM dbo.Diem AS d
+                                INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                                INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                                INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                                INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                                WHERE d.lan = {0}", lan);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+            else
+            {
+                return GetListDiem();
+            }
+        }
+
+        public DataTable GetListDiemByMamh(string mamh , int lan)
+        {
+            if (lan > 0)
+            {
+                string qr = string.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                            WHERE d.lan = {0}
+                            AND d.mamh = '{1}' ", lan, mamh);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+            else
+            {
+                string qr = string.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                            WHERE d.mamh = '{0}' ", mamh);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+
+        }
+
+        public DataTable GetListDiemByMakh(string makh, int lan)
+        {
+            if (lan > 0)
+            {
+                string qr = string.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                            WHERE d.lan = {0}
+                            AND l.makh = '{1}' ", lan, makh);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+            else
+            {
+                string qr = string.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                            WHERE l.makh = '{0}' ", makh);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+
+        }
+
+        public DataTable GetListDiemByMalop(string malop, int lan)
+        {
+            if (lan > 0)
+            {
+                string qr = string.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                            WHERE d.lan = {0}
+                            AND sv.malop = '{1}' ", lan, malop);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+            else
+            {
+                string qr = string.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                            WHERE sv.malop = '{0}' ", malop);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+
+        }
+
+        public DataTable GetListDiemByMakhMamh(string makh, string mamh, int lan)
+        {
+            if (lan > 0)
+            {
+                string qr = string.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                            WHERE d.lan = {0}
+                            AND d.mamh = '{1}'
+                            AND kh.makh = '{2}' ", lan, mamh, makh);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+            else
+            {
+                string qr = string.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                            WHERE d.mamh = '{0}'
+                            AND kh.makh = '{1}' ", mamh, makh);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+
+        }
+
+        public DataTable GetListDiemByMakhMalop(string makh, string malop, int lan)
+        {
+            if (lan > 0)
+            {
+                string qr = string.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                            WHERE d.lan = {0}
+                            AND sv.malop = '{1}'
+                            AND kh.makh = '{2}' ", lan, malop, makh);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+            else
+            {
+                string qr = string.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                            WHERE sv.malop = '{0}'
+                            AND kh.makh = '{1}' ", malop, makh);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+
+        }
+
+        public DataTable GetListDiemByMalopMamh(string malop, string mamh, int lan)
+        {
+            if (lan > 0)
+            {
+                string qr = string.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                            WHERE d.lan = {0}
+                            AND d.mamh = '{1}'
+                            AND sv.malop = '{2}' ", lan, mamh, malop);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+            else
+            {
+                string qr = string.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                            WHERE d.mamh = '{0}'
+                            AND sv.malop = '{1}' ", mamh, malop);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+
+        }
+
+        public DataTable GetListDiemByMakhMalopMamh(string makh, string malop, string mamh, int lan)
+        {
+            if (lan > 0)
+            {
+                string qr = string.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                            WHERE d.lan = {0}
+                            AND d.mamh = '{1}'
+                            AND l.MALOP = '{2}'
+                            AND kh.MAKH = '{3}' ", lan, mamh, malop, makh);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+            else
+            {
+                string qr = string.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                            FROM dbo.Diem AS d
+                            INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                            INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                            INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                            INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                            WHERE d.mamh = '{0}'
+                            AND l.MALOP = '{1}'
+                            AND kh.MAKH = '{2}' ", mamh, malop, makh);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
 
         }
 
