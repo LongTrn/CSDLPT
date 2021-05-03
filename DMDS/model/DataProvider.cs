@@ -20,7 +20,7 @@ namespace DMDS.model
 
         private DataProvider() {; }
 
-        private string cnstr = @"Server=LONGTRNN\MSSQLSERVER01;Database=DSV;Trusted_Connection=True;";
+        private string cnstr = @"Data Source=LONGTRNN\MSSQLSERVER01;Initial Catalog=DSV;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] para = null)
         {

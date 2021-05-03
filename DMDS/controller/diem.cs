@@ -36,7 +36,7 @@ namespace DMDS.controller
 
         public Diemm GetDiemByMasv(string masv)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Diem WHERE masv = like N'%@masv%'", new object[] { "08VTA101" });
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Diem WHERE masv = like N'%@masv%'", new object[] { masv });
 
             foreach (DataRow item in data.Rows)
             {
@@ -45,6 +45,36 @@ namespace DMDS.controller
             }
 
             return null;
+        }
+
+        public DataTable GetListDiemByMasv(string masv, int lan)
+        {
+            string qr = "";
+            if (lan == 0)
+            {
+                qr = String.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                                FROM dbo.Diem AS d
+                                INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                                INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                                INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                                INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                                WHERE d.masv = '{0}'", masv);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
+            else
+            {
+                qr = String.Format(@"SELECT d.masv, sv.ho, sv.ten, sv.phai, sv.malop, l.makh, d.mamh, mh.tenmh, lan, diem 
+                                FROM dbo.Diem AS d
+                                INNER JOIN dbo.Sinhvien AS sv ON d.masv = sv.masv
+                                INNER JOIN dbo.Lop AS l ON l.malop = sv.malop
+                                INNER JOIN dbo.Khoa AS kh ON kh.makh = l.makh
+                                INNER JOIN dbo.Monhoc AS mh ON mh.mamh = d.mamh
+                                WHERE d.masv = '{0}'
+                                AND lan = {1}", masv, lan);
+
+                return DataProvider.Instance.ExecuteQuery(qr);
+            }
         }
 
         public DataTable GetListDiem()

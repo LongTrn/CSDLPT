@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.ConnectionParameters.MsSqlConnectionParameters msSqlConnectionParameters3 = new DevExpress.DataAccess.ConnectionParameters.MsSqlConnectionParameters();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter9 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter10 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter11 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter12 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.ConnectionParameters.MsSqlConnectionParameters msSqlConnectionParameters1 = new DevExpress.DataAccess.ConnectionParameters.MsSqlConnectionParameters();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
@@ -54,11 +54,36 @@
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.btnDSKhoa = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.btnPreview = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancelPreview = new DevExpress.XtraEditors.SimpleButton();
+            this.lbTimesRP = new System.Windows.Forms.Label();
+            this.txtTimesRP = new System.Windows.Forms.NumericUpDown();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbKhoaRP = new System.Windows.Forms.ComboBox();
+            this.lbKhoaRP = new System.Windows.Forms.Label();
+            this.txtCodeDepartment = new DevExpress.XtraEditors.TextEdit();
+            this.lbCodeDepartment = new System.Windows.Forms.Label();
+            this.lbLopRP = new System.Windows.Forms.Label();
+            this.lbCodeClass = new System.Windows.Forms.Label();
+            this.lbMonhocRP = new System.Windows.Forms.Label();
+            this.lbCodeSubject = new System.Windows.Forms.Label();
+            this.txtCodeClass = new DevExpress.XtraEditors.TextEdit();
+            this.txtCodeSubject = new DevExpress.XtraEditors.TextEdit();
+            this.cbLopRP = new System.Windows.Forms.ComboBox();
+            this.cbMonhocRP = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -82,6 +107,8 @@
             this.lbDepartment = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.lbCode = new System.Windows.Forms.Label();
+            this.lbTimes = new System.Windows.Forms.Label();
+            this.txtTimes = new System.Windows.Forms.NumericUpDown();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
@@ -90,7 +117,6 @@
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
@@ -104,7 +130,6 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.checkedComboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBox21 = new System.Windows.Forms.ComboBox();
             this.comboBox211 = new System.Windows.Forms.ComboBox();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -116,7 +141,6 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -127,6 +151,7 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.formReport = new DevExpress.XtraLayout.LayoutControlItem();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSVDataSet = new DMDS.DSVDataSet();
@@ -152,11 +177,16 @@
             this.colrowguid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.simpleLabelItem2 = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.lbTimes = new System.Windows.Forms.Label();
-            this.txtTimes = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimesRP)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCodeDepartment.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCodeClass.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCodeSubject.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -170,13 +200,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDepartment.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
@@ -186,7 +216,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
@@ -197,6 +226,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
@@ -209,7 +239,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTimes)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -235,12 +264,18 @@
             this.barButtonItem9,
             this.barButtonItem10,
             this.btnDSKhoa,
-            this.barButtonItem12});
+            this.barButtonItem12,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barButtonItem5});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 37;
+            this.ribbonControl.MaxItemId = 42;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage2});
+            this.ribbonPage2,
+            this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.Size = new System.Drawing.Size(790, 126);
@@ -291,6 +326,7 @@
             // 
             this.btnDSLH.Caption = "Lớp Học";
             this.btnDSLH.Id = 21;
+            this.btnDSLH.ImageOptions.SvgImage = global::DMDS.Properties.Resources.actions_bookmark;
             this.btnDSLH.Name = "btnDSLH";
             this.btnDSLH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
@@ -298,6 +334,7 @@
             // 
             this.btnDSSV.Caption = "Sinh Viên";
             this.btnDSSV.Id = 22;
+            this.btnDSSV.ImageOptions.SvgImage = global::DMDS.Properties.Resources.bo_employee2;
             this.btnDSSV.Name = "btnDSSV";
             this.btnDSSV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
@@ -305,6 +342,7 @@
             // 
             this.btnDSMH.Caption = "Môn Học";
             this.btnDSMH.Id = 23;
+            this.btnDSMH.ImageOptions.SvgImage = global::DMDS.Properties.Resources.bo_note;
             this.btnDSMH.Name = "btnDSMH";
             this.btnDSMH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
@@ -312,6 +350,7 @@
             // 
             this.btnDSDS.Caption = "Điểm Số";
             this.btnDSDS.Id = 24;
+            this.btnDSDS.ImageOptions.SvgImage = global::DMDS.Properties.Resources.bo_task;
             this.btnDSDS.Name = "btnDSDS";
             this.btnDSDS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
@@ -319,6 +358,7 @@
             // 
             this.barButtonItem6.Caption = "Khoa ";
             this.barButtonItem6.Id = 25;
+            this.barButtonItem6.ImageOptions.SvgImage = global::DMDS.Properties.Resources.actions_book1;
             this.barButtonItem6.Name = "barButtonItem6";
             this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
@@ -331,6 +371,7 @@
             // 
             this.barButtonItem8.Caption = "Lớp Học";
             this.barButtonItem8.Id = 27;
+            this.barButtonItem8.ImageOptions.SvgImage = global::DMDS.Properties.Resources.actions_bookmark1;
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
@@ -338,6 +379,7 @@
             // 
             this.barButtonItem9.Caption = "Sinh Viên";
             this.barButtonItem9.Id = 28;
+            this.barButtonItem9.ImageOptions.SvgImage = global::DMDS.Properties.Resources.actions_user;
             this.barButtonItem9.Name = "barButtonItem9";
             this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
             // 
@@ -345,6 +387,7 @@
             // 
             this.barButtonItem10.Caption = "Môn Học";
             this.barButtonItem10.Id = 29;
+            this.barButtonItem10.ImageOptions.SvgImage = global::DMDS.Properties.Resources.bo_note1;
             this.barButtonItem10.Name = "barButtonItem10";
             this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem10_ItemClick);
             // 
@@ -352,6 +395,7 @@
             // 
             this.btnDSKhoa.Caption = "Khoa";
             this.btnDSKhoa.Id = 30;
+            this.btnDSKhoa.ImageOptions.SvgImage = global::DMDS.Properties.Resources.actions_book;
             this.btnDSKhoa.Name = "btnDSKhoa";
             this.btnDSKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
             // 
@@ -359,14 +403,54 @@
             // 
             this.barButtonItem12.Caption = "Điểm Số";
             this.barButtonItem12.Id = 31;
+            this.barButtonItem12.ImageOptions.SvgImage = global::DMDS.Properties.Resources.bo_task1;
             this.barButtonItem12.Name = "barButtonItem12";
             this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Danh Sách Sinh Viên";
+            this.barButtonItem1.Id = 37;
+            this.barButtonItem1.ImageOptions.SvgImage = global::DMDS.Properties.Resources.bo_department2;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Danh Sách Điểm Môn";
+            this.barButtonItem2.Id = 38;
+            this.barButtonItem2.ImageOptions.SvgImage = global::DMDS.Properties.Resources.bo_report;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick_1);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Phiếu Điểm Sinh Viên";
+            this.barButtonItem3.Id = 39;
+            this.barButtonItem3.ImageOptions.SvgImage = global::DMDS.Properties.Resources.bo_contact;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick_1);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Phiếu Điểm Lớp";
+            this.barButtonItem4.Id = 40;
+            this.barButtonItem4.ImageOptions.SvgImage = global::DMDS.Properties.Resources.grid;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_1);
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Danh Sách Lớp Học";
+            this.barButtonItem5.Id = 41;
+            this.barButtonItem5.ImageOptions.SvgImage = global::DMDS.Properties.Resources.richeditbookmark;
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick_1);
             // 
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3,
-            this.ribbonPageGroup4});
+            this.ribbonPageGroup3});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Quản Trị";
             // 
@@ -380,6 +464,13 @@
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Danh Sách";
             // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup4});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "Thông Tin";
+            // 
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem6);
@@ -387,19 +478,25 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem9);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem10);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem12);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem1, true);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem5, true);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Báo Cáo";
             // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 572);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 734);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
             this.ribbonStatusBar.Size = new System.Drawing.Size(790, 27);
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.tableLayoutPanel2);
             this.layoutControl1.Controls.Add(this.comboBox2);
             this.layoutControl1.Controls.Add(this.layoutControl2);
             this.layoutControl1.Controls.Add(this.simpleButton11);
@@ -408,7 +505,6 @@
             this.layoutControl1.Controls.Add(this.simpleButton8);
             this.layoutControl1.Controls.Add(this.simpleButton7);
             this.layoutControl1.Controls.Add(this.simpleButton6);
-            this.layoutControl1.Controls.Add(this.simpleButton5);
             this.layoutControl1.Controls.Add(this.simpleButton4);
             this.layoutControl1.Controls.Add(this.windowsUIButtonPanel1);
             this.layoutControl1.Controls.Add(this.buttonEdit1);
@@ -417,7 +513,6 @@
             this.layoutControl1.Controls.Add(this.simpleButton1);
             this.layoutControl1.Controls.Add(this.simpleButton2);
             this.layoutControl1.Controls.Add(this.simpleButton3);
-            this.layoutControl1.Controls.Add(this.checkedComboBoxEdit1);
             this.layoutControl1.Controls.Add(this.comboBox21);
             this.layoutControl1.Controls.Add(this.comboBox211);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -430,17 +525,293 @@
             this.layoutControlItem5});
             this.layoutControl1.Location = new System.Drawing.Point(0, 126);
             this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1034, 204, 650, 400);
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(781, 212, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(790, 446);
+            this.layoutControl1.Size = new System.Drawing.Size(790, 608);
             this.layoutControl1.TabIndex = 7;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayout, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 457);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.71831F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.28169F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(766, 139);
+            this.tableLayoutPanel2.TabIndex = 40;
+            // 
+            // tableLayout
+            // 
+            this.tableLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayout.ColumnCount = 6;
+            this.tableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayout.Controls.Add(this.btnPreview, 3, 0);
+            this.tableLayout.Controls.Add(this.btnCancelPreview, 4, 0);
+            this.tableLayout.Controls.Add(this.lbTimesRP, 1, 0);
+            this.tableLayout.Controls.Add(this.txtTimesRP, 2, 0);
+            this.tableLayout.Location = new System.Drawing.Point(3, 99);
+            this.tableLayout.Name = "tableLayout";
+            this.tableLayout.RowCount = 1;
+            this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayout.Size = new System.Drawing.Size(760, 37);
+            this.tableLayout.TabIndex = 39;
+            // 
+            // btnPreview
+            // 
+            this.btnPreview.ImageOptions.SvgImage = global::DMDS.Properties.Resources.trackingchanges_accept1;
+            this.btnPreview.Location = new System.Drawing.Point(459, 3);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Size = new System.Drawing.Size(108, 31);
+            this.btnPreview.StyleController = this.layoutControl1;
+            this.btnPreview.TabIndex = 28;
+            this.btnPreview.Text = "Xem";
+            this.btnPreview.Visible = false;
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click_1);
+            // 
+            // btnCancelPreview
+            // 
+            this.btnCancelPreview.ImageOptions.SvgImage = global::DMDS.Properties.Resources.trackingchanges_reject1;
+            this.btnCancelPreview.Location = new System.Drawing.Point(573, 3);
+            this.btnCancelPreview.Name = "btnCancelPreview";
+            this.btnCancelPreview.Size = new System.Drawing.Size(108, 31);
+            this.btnCancelPreview.StyleController = this.layoutControl1;
+            this.btnCancelPreview.TabIndex = 29;
+            this.btnCancelPreview.Text = "Thêm";
+            this.btnCancelPreview.Visible = false;
+            // 
+            // lbTimesRP
+            // 
+            this.lbTimesRP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTimesRP.AutoSize = true;
+            this.lbTimesRP.Location = new System.Drawing.Point(231, 0);
+            this.lbTimesRP.Name = "lbTimesRP";
+            this.lbTimesRP.Size = new System.Drawing.Size(108, 37);
+            this.lbTimesRP.TabIndex = 33;
+            this.lbTimesRP.Text = "Số Lần";
+            this.lbTimesRP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbTimesRP.Visible = false;
+            // 
+            // txtTimesRP
+            // 
+            this.txtTimesRP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTimesRP.Location = new System.Drawing.Point(345, 8);
+            this.txtTimesRP.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.txtTimesRP.Name = "txtTimesRP";
+            this.txtTimesRP.Size = new System.Drawing.Size(108, 20);
+            this.txtTimesRP.TabIndex = 34;
+            this.txtTimesRP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTimesRP.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtTimesRP.Visible = false;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 6;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel3.Controls.Add(this.cbKhoaRP, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lbKhoaRP, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.txtCodeDepartment, 4, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lbCodeDepartment, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lbLopRP, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lbCodeClass, 3, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lbMonhocRP, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.lbCodeSubject, 3, 3);
+            this.tableLayoutPanel3.Controls.Add(this.txtCodeClass, 4, 2);
+            this.tableLayoutPanel3.Controls.Add(this.txtCodeSubject, 4, 3);
+            this.tableLayoutPanel3.Controls.Add(this.cbLopRP, 2, 2);
+            this.tableLayoutPanel3.Controls.Add(this.cbMonhocRP, 2, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(760, 90);
+            this.tableLayoutPanel3.TabIndex = 38;
+            // 
+            // cbKhoaRP
+            // 
+            this.cbKhoaRP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhoaRP.FormattingEnabled = true;
+            this.cbKhoaRP.Location = new System.Drawing.Point(155, 3);
+            this.cbKhoaRP.Name = "cbKhoaRP";
+            this.cbKhoaRP.Size = new System.Drawing.Size(298, 21);
+            this.cbKhoaRP.TabIndex = 21;
+            this.cbKhoaRP.Visible = false;
+            this.cbKhoaRP.SelectedIndexChanged += new System.EventHandler(this.cbKhoaRP_SelectedIndexChanged);
+            // 
+            // lbKhoaRP
+            // 
+            this.lbKhoaRP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbKhoaRP.AutoSize = true;
+            this.lbKhoaRP.Location = new System.Drawing.Point(79, 0);
+            this.lbKhoaRP.Name = "lbKhoaRP";
+            this.lbKhoaRP.Size = new System.Drawing.Size(70, 27);
+            this.lbKhoaRP.TabIndex = 22;
+            this.lbKhoaRP.Text = "Khoa";
+            this.lbKhoaRP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbKhoaRP.Visible = false;
+            // 
+            // txtCodeDepartment
+            // 
+            this.txtCodeDepartment.Location = new System.Drawing.Point(535, 3);
+            this.txtCodeDepartment.MenuManager = this.ribbonControl;
+            this.txtCodeDepartment.Name = "txtCodeDepartment";
+            this.txtCodeDepartment.Properties.ReadOnly = true;
+            this.txtCodeDepartment.Size = new System.Drawing.Size(146, 20);
+            this.txtCodeDepartment.TabIndex = 24;
+            this.txtCodeDepartment.Visible = false;
+            // 
+            // lbCodeDepartment
+            // 
+            this.lbCodeDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbCodeDepartment.AutoSize = true;
+            this.lbCodeDepartment.Location = new System.Drawing.Point(459, 0);
+            this.lbCodeDepartment.Name = "lbCodeDepartment";
+            this.lbCodeDepartment.Size = new System.Drawing.Size(70, 27);
+            this.lbCodeDepartment.TabIndex = 2;
+            this.lbCodeDepartment.Text = "Mã Khoa";
+            this.lbCodeDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbCodeDepartment.Visible = false;
+            // 
+            // lbLopRP
+            // 
+            this.lbLopRP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbLopRP.AutoSize = true;
+            this.lbLopRP.Location = new System.Drawing.Point(79, 27);
+            this.lbLopRP.Name = "lbLopRP";
+            this.lbLopRP.Size = new System.Drawing.Size(70, 27);
+            this.lbLopRP.TabIndex = 25;
+            this.lbLopRP.Text = "Lớp";
+            this.lbLopRP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbLopRP.Visible = false;
+            // 
+            // lbCodeClass
+            // 
+            this.lbCodeClass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbCodeClass.AutoSize = true;
+            this.lbCodeClass.Location = new System.Drawing.Point(459, 27);
+            this.lbCodeClass.Name = "lbCodeClass";
+            this.lbCodeClass.Size = new System.Drawing.Size(70, 27);
+            this.lbCodeClass.TabIndex = 26;
+            this.lbCodeClass.Text = "Mã Lớp";
+            this.lbCodeClass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbCodeClass.Visible = false;
+            // 
+            // lbMonhocRP
+            // 
+            this.lbMonhocRP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMonhocRP.AutoSize = true;
+            this.lbMonhocRP.Location = new System.Drawing.Point(79, 54);
+            this.lbMonhocRP.Name = "lbMonhocRP";
+            this.lbMonhocRP.Size = new System.Drawing.Size(70, 36);
+            this.lbMonhocRP.TabIndex = 27;
+            this.lbMonhocRP.Text = "Môn Học";
+            this.lbMonhocRP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbMonhocRP.Visible = false;
+            // 
+            // lbCodeSubject
+            // 
+            this.lbCodeSubject.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbCodeSubject.AutoSize = true;
+            this.lbCodeSubject.Location = new System.Drawing.Point(459, 54);
+            this.lbCodeSubject.Name = "lbCodeSubject";
+            this.lbCodeSubject.Size = new System.Drawing.Size(70, 36);
+            this.lbCodeSubject.TabIndex = 28;
+            this.lbCodeSubject.Text = "Mã Môn Học";
+            this.lbCodeSubject.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbCodeSubject.Visible = false;
+            // 
+            // txtCodeClass
+            // 
+            this.txtCodeClass.Location = new System.Drawing.Point(535, 30);
+            this.txtCodeClass.MenuManager = this.ribbonControl;
+            this.txtCodeClass.Name = "txtCodeClass";
+            this.txtCodeClass.Properties.ReadOnly = true;
+            this.txtCodeClass.Size = new System.Drawing.Size(146, 20);
+            this.txtCodeClass.TabIndex = 29;
+            this.txtCodeClass.Visible = false;
+            // 
+            // txtCodeSubject
+            // 
+            this.txtCodeSubject.Location = new System.Drawing.Point(535, 57);
+            this.txtCodeSubject.MenuManager = this.ribbonControl;
+            this.txtCodeSubject.Name = "txtCodeSubject";
+            this.txtCodeSubject.Properties.ReadOnly = true;
+            this.txtCodeSubject.Size = new System.Drawing.Size(146, 20);
+            this.txtCodeSubject.TabIndex = 30;
+            this.txtCodeSubject.Visible = false;
+            // 
+            // cbLopRP
+            // 
+            this.cbLopRP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLopRP.FormattingEnabled = true;
+            this.cbLopRP.Location = new System.Drawing.Point(155, 30);
+            this.cbLopRP.Name = "cbLopRP";
+            this.cbLopRP.Size = new System.Drawing.Size(298, 21);
+            this.cbLopRP.TabIndex = 31;
+            this.cbLopRP.Visible = false;
+            this.cbLopRP.SelectedIndexChanged += new System.EventHandler(this.cbLopRP_SelectedIndexChanged);
+            // 
+            // cbMonhocRP
+            // 
+            this.cbMonhocRP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMonhocRP.FormattingEnabled = true;
+            this.cbMonhocRP.Location = new System.Drawing.Point(155, 57);
+            this.cbMonhocRP.Name = "cbMonhocRP";
+            this.cbMonhocRP.Size = new System.Drawing.Size(298, 21);
+            this.cbMonhocRP.TabIndex = 32;
+            this.cbMonhocRP.Visible = false;
+            this.cbMonhocRP.SelectedIndexChanged += new System.EventHandler(this.cbMonhocRP_SelectedIndexChanged);
             // 
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(52, 388);
+            this.comboBox2.Location = new System.Drawing.Point(52, 407);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(726, 21);
             this.comboBox2.TabIndex = 34;
@@ -449,11 +820,11 @@
             // layoutControl2
             // 
             this.layoutControl2.Controls.Add(this.tableLayoutPanel1);
-            this.layoutControl2.Location = new System.Drawing.Point(12, 228);
+            this.layoutControl2.Location = new System.Drawing.Point(12, 246);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(833, 272, 650, 400);
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(766, 156);
+            this.layoutControl2.Size = new System.Drawing.Size(766, 157);
             this.layoutControl2.TabIndex = 33;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -500,7 +871,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(742, 132);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(742, 133);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // lbStudent
@@ -581,7 +952,7 @@
             this.lbBirthday.AutoSize = true;
             this.lbBirthday.Location = new System.Drawing.Point(447, 105);
             this.lbBirthday.Name = "lbBirthday";
-            this.lbBirthday.Size = new System.Drawing.Size(68, 27);
+            this.lbBirthday.Size = new System.Drawing.Size(68, 28);
             this.lbBirthday.TabIndex = 16;
             this.lbBirthday.Text = "Ngày sinh";
             this.lbBirthday.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -667,7 +1038,7 @@
             this.lbClass.AutoSize = true;
             this.lbClass.Location = new System.Drawing.Point(3, 105);
             this.lbClass.Name = "lbClass";
-            this.lbClass.Size = new System.Drawing.Size(68, 27);
+            this.lbClass.Size = new System.Drawing.Size(68, 28);
             this.lbClass.TabIndex = 6;
             this.lbClass.Text = "Lớp";
             this.lbClass.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -749,6 +1120,35 @@
             this.lbCode.Text = "Mã";
             this.lbCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbTimes
+            // 
+            this.lbTimes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTimes.AutoSize = true;
+            this.lbTimes.Location = new System.Drawing.Point(299, 27);
+            this.lbTimes.Name = "lbTimes";
+            this.lbTimes.Size = new System.Drawing.Size(68, 26);
+            this.lbTimes.TabIndex = 23;
+            this.lbTimes.Text = "Số Lần";
+            this.lbTimes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTimes.Visible = false;
+            // 
+            // txtTimes
+            // 
+            this.txtTimes.Location = new System.Drawing.Point(373, 30);
+            this.txtTimes.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.txtTimes.Name = "txtTimes";
+            this.txtTimes.Size = new System.Drawing.Size(68, 20);
+            this.txtTimes.TabIndex = 24;
+            this.txtTimes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTimes.Visible = false;
+            this.txtTimes.ValueChanged += new System.EventHandler(this.txtTimes_ValueChanged);
+            // 
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.CustomizationFormText = "Form";
@@ -757,7 +1157,7 @@
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem11});
             this.layoutControlGroup2.Name = "Root";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(766, 156);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(766, 157);
             this.layoutControlGroup2.Text = "Form";
             this.layoutControlGroup2.TextVisible = false;
             this.layoutControlGroup2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
@@ -768,7 +1168,7 @@
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem11.MinSize = new System.Drawing.Size(50, 25);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(746, 136);
+            this.layoutControlItem11.Size = new System.Drawing.Size(746, 137);
             this.layoutControlItem11.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
@@ -776,9 +1176,9 @@
             // simpleButton11
             // 
             this.simpleButton11.ImageOptions.SvgImage = global::DMDS.Properties.Resources.changeview;
-            this.simpleButton11.Location = new System.Drawing.Point(589, 12);
+            this.simpleButton11.Location = new System.Drawing.Point(572, 12);
             this.simpleButton11.Name = "simpleButton11";
-            this.simpleButton11.Size = new System.Drawing.Size(92, 36);
+            this.simpleButton11.Size = new System.Drawing.Size(99, 36);
             this.simpleButton11.StyleController = this.layoutControl1;
             this.simpleButton11.TabIndex = 31;
             this.simpleButton11.Text = "Làm Mới";
@@ -788,10 +1188,10 @@
             // 
             this.simpleButton10.Enabled = false;
             this.simpleButton10.ImageOptions.SvgImage = global::DMDS.Properties.Resources.trackingchanges_reject;
-            this.simpleButton10.Location = new System.Drawing.Point(492, 12);
+            this.simpleButton10.Location = new System.Drawing.Point(443, 12);
             this.simpleButton10.Name = "simpleButton10";
             this.simpleButton10.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton10.Size = new System.Drawing.Size(93, 36);
+            this.simpleButton10.Size = new System.Drawing.Size(125, 36);
             this.simpleButton10.StyleController = this.layoutControl1;
             this.simpleButton10.TabIndex = 30;
             this.simpleButton10.Text = "Hủy Bỏ";
@@ -809,10 +1209,10 @@
             this.simpleButton9.AppearanceDisabled.Options.UseImage = true;
             this.simpleButton9.Enabled = false;
             this.simpleButton9.ImageOptions.SvgImage = global::DMDS.Properties.Resources.trackingchanges_accept;
-            this.simpleButton9.Location = new System.Drawing.Point(396, 12);
+            this.simpleButton9.Location = new System.Drawing.Point(323, 12);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton9.Size = new System.Drawing.Size(92, 36);
+            this.simpleButton9.Size = new System.Drawing.Size(116, 36);
             this.simpleButton9.StyleController = this.layoutControl1;
             this.simpleButton9.TabIndex = 29;
             this.simpleButton9.Text = "Xác Nhận";
@@ -821,9 +1221,9 @@
             // simpleButton8
             // 
             this.simpleButton8.ImageOptions.SvgImage = global::DMDS.Properties.Resources.delete;
-            this.simpleButton8.Location = new System.Drawing.Point(204, 12);
+            this.simpleButton8.Location = new System.Drawing.Point(221, 12);
             this.simpleButton8.Name = "simpleButton8";
-            this.simpleButton8.Size = new System.Drawing.Size(92, 36);
+            this.simpleButton8.Size = new System.Drawing.Size(98, 36);
             this.simpleButton8.StyleController = this.layoutControl1;
             this.simpleButton8.TabIndex = 28;
             this.simpleButton8.Text = "Xóa";
@@ -834,7 +1234,7 @@
             this.simpleButton7.ImageOptions.SvgImage = global::DMDS.Properties.Resources.actions_add;
             this.simpleButton7.Location = new System.Drawing.Point(12, 12);
             this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(92, 36);
+            this.simpleButton7.Size = new System.Drawing.Size(96, 36);
             this.simpleButton7.StyleController = this.layoutControl1;
             this.simpleButton7.TabIndex = 27;
             this.simpleButton7.Text = "Thêm";
@@ -842,33 +1242,23 @@
             // 
             // simpleButton6
             // 
-            this.simpleButton6.ImageOptions.SvgImage = global::DMDS.Properties.Resources.actions_edit;
-            this.simpleButton6.Location = new System.Drawing.Point(108, 12);
+            this.simpleButton6.ImageOptions.SvgImage = global::DMDS.Properties.Resources.actions_edit1;
+            this.simpleButton6.Location = new System.Drawing.Point(112, 12);
             this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(92, 36);
+            this.simpleButton6.Size = new System.Drawing.Size(105, 36);
             this.simpleButton6.StyleController = this.layoutControl1;
-            this.simpleButton6.TabIndex = 26;
+            this.simpleButton6.TabIndex = 35;
             this.simpleButton6.Text = "Sửa";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.ImageOptions.SvgImage = global::DMDS.Properties.Resources.redo;
-            this.simpleButton5.Location = new System.Drawing.Point(300, 12);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(92, 36);
-            this.simpleButton5.StyleController = this.layoutControl1;
-            this.simpleButton5.TabIndex = 25;
-            this.simpleButton5.Text = "Hoàn Tác";
             // 
             // simpleButton4
             // 
             this.simpleButton4.Enabled = false;
             this.simpleButton4.ImageOptions.SvgImage = global::DMDS.Properties.Resources.paymentunpaid;
-            this.simpleButton4.Location = new System.Drawing.Point(685, 12);
+            this.simpleButton4.Location = new System.Drawing.Point(675, 12);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton4.Size = new System.Drawing.Size(93, 36);
+            this.simpleButton4.Size = new System.Drawing.Size(103, 36);
             this.simpleButton4.StyleController = this.layoutControl1;
             this.simpleButton4.TabIndex = 24;
             this.simpleButton4.Text = "Thoát Ra";
@@ -902,7 +1292,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.ribbonControl;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(766, 172);
+            this.gridControl1.Size = new System.Drawing.Size(766, 190);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -985,26 +1375,13 @@
             this.simpleButton3.TabIndex = 13;
             this.simpleButton3.Text = "simpleButton3";
             // 
-            // checkedComboBoxEdit1
-            // 
-            this.checkedComboBoxEdit1.EditValue = "";
-            this.checkedComboBoxEdit1.Location = new System.Drawing.Point(60, 85);
-            this.checkedComboBoxEdit1.MenuManager = this.ribbonControl;
-            this.checkedComboBoxEdit1.Name = "checkedComboBoxEdit1";
-            this.checkedComboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.checkedComboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.checkedComboBoxEdit1.Size = new System.Drawing.Size(706, 20);
-            this.checkedComboBoxEdit1.StyleController = this.layoutControl1;
-            this.checkedComboBoxEdit1.TabIndex = 7;
-            // 
             // comboBox21
             // 
             this.comboBox21.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox21.FormattingEnabled = true;
-            this.comboBox21.Location = new System.Drawing.Point(52, 413);
+            this.comboBox21.Location = new System.Drawing.Point(52, 432);
             this.comboBox21.Name = "comboBox21";
-            this.comboBox21.Size = new System.Drawing.Size(341, 21);
+            this.comboBox21.Size = new System.Drawing.Size(267, 21);
             this.comboBox21.TabIndex = 34;
             this.comboBox21.SelectedValueChanged += new System.EventHandler(this.comboBox21_SelectedValueChanged);
             // 
@@ -1012,9 +1389,9 @@
             // 
             this.comboBox211.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox211.FormattingEnabled = true;
-            this.comboBox211.Location = new System.Drawing.Point(437, 413);
+            this.comboBox211.Location = new System.Drawing.Point(363, 432);
             this.comboBox211.Name = "comboBox211";
-            this.comboBox211.Size = new System.Drawing.Size(341, 21);
+            this.comboBox211.Size = new System.Drawing.Size(415, 21);
             this.comboBox211.TabIndex = 34;
             this.comboBox211.SelectedValueChanged += new System.EventHandler(this.comboBox211_SelectedValueChanged);
             // 
@@ -1079,7 +1456,6 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem2,
             this.layoutControlItem9,
-            this.layoutControlItem19,
             this.layoutControlItem20,
             this.layoutControlItem21,
             this.layoutControlItem22,
@@ -1089,9 +1465,10 @@
             this.layoutControlItem10,
             this.layoutControlItem3,
             this.layoutControlItem13,
-            this.layoutControlItem16});
+            this.layoutControlItem16,
+            this.formReport});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(790, 446);
+            this.Root.Size = new System.Drawing.Size(790, 608);
             // 
             // layoutControlItem2
             // 
@@ -1099,36 +1476,25 @@
             this.layoutControlItem2.CustomizationFormText = "datagrid";
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(770, 176);
+            this.layoutControlItem2.Size = new System.Drawing.Size(770, 194);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.simpleButton4;
-            this.layoutControlItem9.Location = new System.Drawing.Point(673, 0);
+            this.layoutControlItem9.Location = new System.Drawing.Point(663, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(97, 40);
+            this.layoutControlItem9.Size = new System.Drawing.Size(107, 40);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
-            // 
-            // layoutControlItem19
-            // 
-            this.layoutControlItem19.Control = this.simpleButton5;
-            this.layoutControlItem19.Location = new System.Drawing.Point(288, 0);
-            this.layoutControlItem19.MinSize = new System.Drawing.Size(91, 40);
-            this.layoutControlItem19.Name = "layoutControlItem19";
-            this.layoutControlItem19.Size = new System.Drawing.Size(96, 40);
-            this.layoutControlItem19.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem19.TextVisible = false;
             // 
             // layoutControlItem20
             // 
             this.layoutControlItem20.Control = this.simpleButton6;
-            this.layoutControlItem20.Location = new System.Drawing.Point(96, 0);
+            this.layoutControlItem20.Location = new System.Drawing.Point(100, 0);
             this.layoutControlItem20.Name = "layoutControlItem20";
-            this.layoutControlItem20.Size = new System.Drawing.Size(96, 40);
+            this.layoutControlItem20.Size = new System.Drawing.Size(109, 40);
             this.layoutControlItem20.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem20.TextVisible = false;
             // 
@@ -1137,59 +1503,59 @@
             this.layoutControlItem21.Control = this.simpleButton7;
             this.layoutControlItem21.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem21.Name = "layoutControlItem21";
-            this.layoutControlItem21.Size = new System.Drawing.Size(96, 40);
+            this.layoutControlItem21.Size = new System.Drawing.Size(100, 40);
             this.layoutControlItem21.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem21.TextVisible = false;
             // 
             // layoutControlItem22
             // 
             this.layoutControlItem22.Control = this.simpleButton8;
-            this.layoutControlItem22.Location = new System.Drawing.Point(192, 0);
+            this.layoutControlItem22.Location = new System.Drawing.Point(209, 0);
             this.layoutControlItem22.Name = "layoutControlItem22";
-            this.layoutControlItem22.Size = new System.Drawing.Size(96, 40);
+            this.layoutControlItem22.Size = new System.Drawing.Size(102, 40);
             this.layoutControlItem22.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem22.TextVisible = false;
             // 
             // layoutControlItem23
             // 
             this.layoutControlItem23.Control = this.simpleButton9;
-            this.layoutControlItem23.Location = new System.Drawing.Point(384, 0);
+            this.layoutControlItem23.Location = new System.Drawing.Point(311, 0);
             this.layoutControlItem23.Name = "layoutControlItem23";
-            this.layoutControlItem23.Size = new System.Drawing.Size(96, 40);
+            this.layoutControlItem23.Size = new System.Drawing.Size(120, 40);
             this.layoutControlItem23.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem23.TextVisible = false;
             // 
             // layoutControlItem24
             // 
             this.layoutControlItem24.Control = this.simpleButton10;
-            this.layoutControlItem24.Location = new System.Drawing.Point(480, 0);
+            this.layoutControlItem24.Location = new System.Drawing.Point(431, 0);
             this.layoutControlItem24.Name = "layoutControlItem24";
-            this.layoutControlItem24.Size = new System.Drawing.Size(97, 40);
+            this.layoutControlItem24.Size = new System.Drawing.Size(129, 40);
             this.layoutControlItem24.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem24.TextVisible = false;
             // 
             // layoutControlItem25
             // 
             this.layoutControlItem25.Control = this.simpleButton11;
-            this.layoutControlItem25.Location = new System.Drawing.Point(577, 0);
+            this.layoutControlItem25.Location = new System.Drawing.Point(560, 0);
             this.layoutControlItem25.Name = "layoutControlItem25";
-            this.layoutControlItem25.Size = new System.Drawing.Size(96, 40);
+            this.layoutControlItem25.Size = new System.Drawing.Size(103, 40);
             this.layoutControlItem25.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem25.TextVisible = false;
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.layoutControl2;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 216);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 234);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(770, 160);
+            this.layoutControlItem10.Size = new System.Drawing.Size(770, 161);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.comboBox2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 376);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 395);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(770, 25);
             this.layoutControlItem3.Text = "KHOA";
@@ -1201,9 +1567,9 @@
             this.layoutControlItem13.Control = this.comboBox21;
             this.layoutControlItem13.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem13.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 401);
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 420);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(385, 25);
+            this.layoutControlItem13.Size = new System.Drawing.Size(311, 25);
             this.layoutControlItem13.Text = "KHOA";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(28, 13);
             this.layoutControlItem13.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
@@ -1213,39 +1579,49 @@
             this.layoutControlItem16.Control = this.comboBox211;
             this.layoutControlItem16.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem16.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem16.Location = new System.Drawing.Point(385, 401);
+            this.layoutControlItem16.Location = new System.Drawing.Point(311, 420);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(385, 25);
+            this.layoutControlItem16.Size = new System.Drawing.Size(459, 25);
             this.layoutControlItem16.Text = "LỚP";
             this.layoutControlItem16.TextSize = new System.Drawing.Size(28, 13);
             this.layoutControlItem16.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
+            // formReport
+            // 
+            this.formReport.Control = this.tableLayoutPanel2;
+            this.formReport.Location = new System.Drawing.Point(0, 445);
+            this.formReport.Name = "formReport";
+            this.formReport.Size = new System.Drawing.Size(770, 143);
+            this.formReport.Text = "form Report";
+            this.formReport.TextSize = new System.Drawing.Size(0, 0);
+            this.formReport.TextVisible = false;
+            // 
             // sqlDataSource1
             // 
             this.sqlDataSource1.ConnectionName = "DSVConnectionString";
-            msSqlConnectionParameters3.AuthorizationType = DevExpress.DataAccess.ConnectionParameters.MsSqlAuthorizationType.Windows;
-            msSqlConnectionParameters3.DatabaseName = "DSV";
-            msSqlConnectionParameters3.ServerName = "LONGTRNN\\MSSQLSERVER01";
-            this.sqlDataSource1.ConnectionParameters = msSqlConnectionParameters3;
+            msSqlConnectionParameters1.AuthorizationType = DevExpress.DataAccess.ConnectionParameters.MsSqlAuthorizationType.Windows;
+            msSqlConnectionParameters1.DatabaseName = "DSV";
+            msSqlConnectionParameters1.ServerName = "LONGTRNN\\MSSQLSERVER01";
+            this.sqlDataSource1.ConnectionParameters = msSqlConnectionParameters1;
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery3.Name = "SP_INSERT_DIEM";
-            queryParameter9.Name = "@MASV";
-            queryParameter9.Type = typeof(string);
-            queryParameter10.Name = "@MAMH";
-            queryParameter10.Type = typeof(string);
-            queryParameter11.Name = "@LAN";
-            queryParameter11.Type = typeof(short);
-            queryParameter11.ValueInfo = "0";
-            queryParameter12.Name = "@DIEM";
-            queryParameter12.Type = typeof(double);
-            queryParameter12.ValueInfo = "0";
-            storedProcQuery3.Parameters.Add(queryParameter9);
-            storedProcQuery3.Parameters.Add(queryParameter10);
-            storedProcQuery3.Parameters.Add(queryParameter11);
-            storedProcQuery3.Parameters.Add(queryParameter12);
-            storedProcQuery3.StoredProcName = "SP_INSERT_DIEM";
+            storedProcQuery1.Name = "SP_INSERT_DIEM";
+            queryParameter1.Name = "@MASV";
+            queryParameter1.Type = typeof(string);
+            queryParameter2.Name = "@MAMH";
+            queryParameter2.Type = typeof(string);
+            queryParameter3.Name = "@LAN";
+            queryParameter3.Type = typeof(short);
+            queryParameter3.ValueInfo = "0";
+            queryParameter4.Name = "@DIEM";
+            queryParameter4.Type = typeof(double);
+            queryParameter4.ValueInfo = "0";
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.Parameters.Add(queryParameter2);
+            storedProcQuery1.Parameters.Add(queryParameter3);
+            storedProcQuery1.Parameters.Add(queryParameter4);
+            storedProcQuery1.StoredProcName = "SP_INSERT_DIEM";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery3});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlNQX0lOU0VSVF9ESUVNIiAvP" +
     "jwvRGF0YVNldD4=";
             // 
@@ -1380,39 +1756,11 @@
             this.simpleLabelItem2.Size = new System.Drawing.Size(746, 17);
             this.simpleLabelItem2.TextSize = new System.Drawing.Size(50, 20);
             // 
-            // lbTimes
-            // 
-            this.lbTimes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbTimes.AutoSize = true;
-            this.lbTimes.Location = new System.Drawing.Point(299, 27);
-            this.lbTimes.Name = "lbTimes";
-            this.lbTimes.Size = new System.Drawing.Size(68, 26);
-            this.lbTimes.TabIndex = 23;
-            this.lbTimes.Text = "Số Lần";
-            this.lbTimes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbTimes.Visible = false;
-            // 
-            // txtTimes
-            // 
-            this.txtTimes.Location = new System.Drawing.Point(373, 30);
-            this.txtTimes.Maximum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.txtTimes.Name = "txtTimes";
-            this.txtTimes.Size = new System.Drawing.Size(68, 20);
-            this.txtTimes.TabIndex = 24;
-            this.txtTimes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTimes.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 599);
+            this.ClientSize = new System.Drawing.Size(790, 761);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
@@ -1421,6 +1769,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayout.ResumeLayout(false);
+            this.tableLayout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimesRP)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCodeDepartment.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCodeClass.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCodeSubject.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1435,13 +1792,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDepartment.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
@@ -1451,7 +1808,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
@@ -1462,6 +1818,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSVDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
@@ -1474,7 +1831,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTimes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1546,10 +1902,8 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton9;
         private DevExpress.XtraEditors.SimpleButton simpleButton7;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem20;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
@@ -1557,7 +1911,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem25;
         private DevExpress.XtraEditors.SimpleButton simpleButton8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
-        private DevExpress.XtraEditors.ComboBoxEdit checkedComboBoxEdit1;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem2;
         private DevExpress.XtraGrid.GridControl gridControl1;
@@ -1600,5 +1953,31 @@
         private System.Windows.Forms.ComboBox cbStudent;
         private System.Windows.Forms.Label lbTimes;
         private System.Windows.Forms.NumericUpDown txtTimes;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayout;
+        private DevExpress.XtraEditors.SimpleButton btnPreview;
+        private DevExpress.XtraEditors.SimpleButton btnCancelPreview;
+        private System.Windows.Forms.Label lbTimesRP;
+        private System.Windows.Forms.NumericUpDown txtTimesRP;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.ComboBox cbKhoaRP;
+        private System.Windows.Forms.Label lbKhoaRP;
+        private DevExpress.XtraEditors.TextEdit txtCodeDepartment;
+        private System.Windows.Forms.Label lbCodeDepartment;
+        private System.Windows.Forms.Label lbLopRP;
+        private System.Windows.Forms.Label lbCodeClass;
+        private System.Windows.Forms.Label lbMonhocRP;
+        private System.Windows.Forms.Label lbCodeSubject;
+        private DevExpress.XtraEditors.TextEdit txtCodeClass;
+        private DevExpress.XtraEditors.TextEdit txtCodeSubject;
+        private System.Windows.Forms.ComboBox cbLopRP;
+        private System.Windows.Forms.ComboBox cbMonhocRP;
+        private DevExpress.XtraLayout.LayoutControlItem formReport;
     }
 }
