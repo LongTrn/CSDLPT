@@ -103,6 +103,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controller\account.cs" />
     <Compile Include="controller\diem.cs" />
     <Compile Include="controller\khoa.cs" />
     <Compile Include="controller\lop.cs" />
@@ -118,6 +119,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSVDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="formLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\account.cs" />
     <Compile Include="model\lop.cs" />
     <Compile Include="model\sinhvien.cs" />
     <Compile Include="model\khoa.cs" />
@@ -167,6 +175,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -340,6 +351,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\richeditbookmark.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\security_key.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
