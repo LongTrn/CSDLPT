@@ -376,7 +376,8 @@ namespace DMDS.controller
 
         public bool InsertDiem (string masv, string mamh, int lan, float diem)
         {
-            string qr = string.Format("INSERT dbo.Diem ( masv, mamh, lan, diem) VALUES( '{0}' , '{1}' , {2} , {3} )", masv, mamh, lan, diem);
+            //string qr = string.Format("INSERT dbo.Diem ( masv, mamh, lan, diem) VALUES( '{0}' , '{1}' , {2} , {3} )", masv, mamh, lan, diem);
+            string qr = string.Format("EXEC SP_INSERT_DIEM {0} , {1} , {2} , {3}", masv, mamh, lan, diem);
 
             int result = DataProvider.Instance.ExecuteNonQuery(qr);
 

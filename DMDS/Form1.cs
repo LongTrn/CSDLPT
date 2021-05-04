@@ -25,9 +25,21 @@ namespace DMDS
         private string STATEFORM = "";
         private DevExpress.XtraGrid.GridControl ReportData = new DevExpress.XtraGrid.GridControl();
 
-        public Form1()
+        private Account loginAccount;
+
+        public Account LoginAccount
+        {
+            get { return loginAccount; }
+            set
+            {
+                loginAccount = value;
+            }
+        }
+
+        public Form1(Account account)
         {
             InitializeComponent();
+            this.LoginAccount = account;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -198,205 +210,6 @@ namespace DMDS
 
         #endregion
 
-        #endregion
-
-        #region Báo Cáo functions
-        
-        // Mở Form
-        void openFormReport ()
-        {
-            formReport.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
-
-            lbKhoaRP.Visible = true;
-            lbLopRP.Visible = true;
-            lbMonhocRP.Visible = true;
-            lbCodeDepartment.Visible = true;
-            lbCodeClass.Visible = true;
-            lbCodeSubject.Visible = true;
-            lbTimesRP.Visible = true;
-
-            cbKhoaRP.Visible = true;
-            cbLopRP.Visible = true;
-            cbMonhocRP.Visible = true;
-            txtCodeDepartment.Visible = true;
-            txtCodeClass.Visible = true;
-            txtCodeSubject.Visible = true;
-            txtTimesRP.Visible = true;
-
-            btnPreview.Visible = true;
-            btnCancelPreview.Visible = true;
-        }
-        
-        // Đóng Form
-        void closeFormReport()
-        {
-            formReport.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-
-            lbKhoaRP.Visible = false;
-            lbLopRP.Visible = false;
-            lbMonhocRP.Visible = false;
-            lbCodeDepartment.Visible = false;
-            lbCodeClass.Visible = false;
-            lbCodeSubject.Visible = false;
-            lbTimesRP.Visible = false;
-
-            cbKhoaRP.Visible = false;
-            cbLopRP.Visible = false;
-            cbMonhocRP.Visible = false;
-            txtCodeDepartment.Visible = false;
-            txtCodeClass.Visible = false;
-            txtCodeSubject.Visible = false;
-            txtTimesRP.Visible = false;
-
-            btnPreview.Visible = false;
-            btnCancelPreview.Visible = false;
-        }
-
-        // Report Danh sách Các Sinh Viên theo Lớp, Khoa
-        void LoadDSSV(string makh, string malop)
-        {
-            if (makh == "" && malop == "")
-            {
-                makh = "ALLDEPARTMENT";
-                malop = "ALLCLASS";
-            }
-            else if (makh != "" && malop == "")
-            {
-                malop = "ALLCLASS";
-            }
-
-            DataTable DSSV =  SinhvienController.Instance.GetListSinhvienByMalop(malop, makh);
-            
-            gridControl1.DataSource = DSSV;
-            gridControl1.ShowRibbonPrintPreview();
-        }
-
-        // Report Phiếu Điểm của Sinh Viên
-        void LoadPDSV(string masv, int lan)
-        {
-            DataTable PDSV = DiemController.Instance.GetListDiemByMasv(masv, lan);
-
-            gridControl1.DataSource = PDSV;
-            gridControl1.ShowRibbonPrintPreview();
-        }
-
-        // Report Danh Sách Lớp theo Khoa
-        void LoadDSLH(string makh)
-        {
-            if (makh == "")
-            {
-                makh = "ALLDEPARTMENT";
-            }
-
-            DataTable DSLH = LopController.Instance.GetListLopByMakh(makh);
-
-            gridControl1.DataSource = DSLH;
-            gridControl1.ShowRibbonPrintPreview();
-        }
-
-        // Report Phiếu Điểm cảu Lớp cụ thể
-        void LoadPDLH(string malop)
-        {
-            if (malop == "")
-            {
-                MessageBox.Show("Chọn một Lớp cụ thể");
-            }
-            else
-            {
-                gridControl1.DataSource = DiemController.Instance.GetListDiemByMalop(malop, 0);
-                gridControl1.ShowRibbonPrintPreview();
-            }
-        }
-
-        // Report Danh sach Điểm Môn Học Theo Khoa, Lớp và Môn học
-        void LoadDSDMH(string makh, string malop, string mamh, int lan)
-        {
-            DataTable Diem = DiemController.Instance.GetListDiem();
-
-            if (mamh == "ALLSUBJECT" && makh == "ALLDEPARTMENT" && malop == "ALLCLASS")
-            {
-                Diem = DiemController.Instance.GetListDiemByLan(lan);
-            }
-            else if (mamh != "ALLSUBJECT" && makh == "ALLDEPARTMENT" && malop == "ALLCLASS")
-            {
-                if (mamh != "")
-                {
-                    Diem = DiemController.Instance.GetListDiemByMamh(mamh, lan);
-                }
-                else
-                {
-                    MessageBox.Show("Chọn Môn Học cụ thể");
-                }
-            }
-            else if (mamh == "ALLSUBJECT" && makh != "ALLDEPARTMENT" && malop == "ALLCLASS")
-            {
-                if (makh != "")
-                {
-                    Diem = DiemController.Instance.GetListDiemByMakh(makh, lan);
-                }
-                else
-                {
-                    MessageBox.Show("Chọn Khoa cụ thể");
-                }
-            }
-            else if (mamh == "ALLSUBJECT" && makh == "ALLDEPARTMENT" && malop != "ALLCLASS")
-            {
-                if (malop != "")
-                {
-                    Diem = DiemController.Instance.GetListDiemByMalop(malop, lan);
-                }
-                else
-                {
-                    MessageBox.Show("Chọn Lớp cụ thể");
-                }
-            }
-            else if (mamh != "ALLSUBJECT" && makh != "ALLDEPARTMENT" && malop == "ALLCLASS")
-            {
-                if (mamh != "" && makh != "")
-                {
-                    Diem = DiemController.Instance.GetListDiemByMakhMamh(makh, mamh, lan);
-                }
-                else
-                {
-                    MessageBox.Show("Chọn Môn Học hay Khoa cụ thể");
-                }
-            }
-            else if (mamh == "ALLSUBJECT" && makh != "ALLDEPARTMENT" && malop != "ALLCLASS")
-            {
-                if (makh != "" && malop != "")
-                {
-                    Diem = DiemController.Instance.GetListDiemByMakhMalop(makh, malop, lan);
-                }
-                else
-                {
-                    MessageBox.Show("Chọn Khoa hay Lớp cụ thể");
-                }
-            }
-            else if (mamh != "ALLSUBJECT" && makh == "ALLDEPARTMENT" && malop != "ALLCLASS")
-            {
-                if (malop != "" && mamh != "")
-                {
-                    Diem = DiemController.Instance.GetListDiemByMalopMamh(malop, mamh, lan);
-                }
-                else
-                {
-                    MessageBox.Show("Chọn Môn Học hay Lớp cụ thể");
-                }
-            }
-            else if (mamh != "ALLSUBJECT" && makh != "ALLDEPARTMENT" && malop != "ALLCLASS" && mamh != "" && makh != "" && malop != "")
-            {
-                if (makh != "" && mamh != "" && malop != "")
-                {
-                    Diem = DiemController.Instance.GetListDiemByMakhMalopMamh(makh, malop, mamh, lan);
-                }
-                else
-                {
-                    MessageBox.Show("Chọn Môn Học hay Khoa, Lớp cụ thể");
-                }
-            }
-            gridControl1.DataSource = Diem;
-            //DataTable DSDMH = DiemController.Instance.get
-        }
         #endregion
 
         #region Danh Sach functions
@@ -862,7 +675,9 @@ namespace DMDS
             DataRow row = gridView1.GetFocusedDataRow();
             List<string> fields = new List<string>();
             List<string> parameters = new List<string>();
-            
+            List<string> desiredFields = new List<string> { "masv", "mamh", "lan", "diem" };
+            List<int> listIndexes = new List<int>();
+
             for (int i = 0; i < row.ItemArray.Length; i++)
             {
                 fields.Add(row.Table.Columns[i].ColumnName);
@@ -871,7 +686,7 @@ namespace DMDS
                 text +=(row.Table.Columns[i].ColumnName + " " + row.ItemArray[i].ToString()) + " ";
             }
 
-
+            //Edit Khoa Table
             if (TABLE == "KHOA")
             {
                 qr += "SP_UPDATE_KHOA @" + String.Join(" , @", fields);
@@ -888,6 +703,7 @@ namespace DMDS
                     MessageBox.Show("Sửa Đổi Khoa Thất Bại");
                 }
             }
+            //Edit Lop Table
             else if (TABLE == "LOP")
             {
                 qr += "SP_UPDATE_LOP @" + String.Join(" , @", fields);
@@ -904,6 +720,7 @@ namespace DMDS
                     MessageBox.Show("Sửa Đổi Lớp Thất Bại");
                 }
             }
+            //Edit Sinhvien Table
             else if (TABLE == "SINHVIEN")
             {
                 qr += "SP_UPDATE_SINHVIEN @" + String.Join(" , @", fields);
@@ -920,6 +737,7 @@ namespace DMDS
                     MessageBox.Show("Sửa Đổi Sinh Viên Thất Bại");
                 }
             }
+            //Edit Monhoc Table
             else if (TABLE == "MONHOC")
             {
                 qr += "SP_UPDATE_MONHOC @" + String.Join(" , @", fields);
@@ -936,10 +754,25 @@ namespace DMDS
                     MessageBox.Show("Sửa Đổi Môn Học Thất Bại");
                 }
             }
+            //Edit Diem Table
             else if (TABLE == "DIEM")
             {
+                
+                MessageBox.Show("No. cols: " + fields.Where(field => desiredFields.Contains(field)).ToArray().Length.ToString());
+                fields = fields.Where(field =>
+                {
+                    if (desiredFields.Contains(field))
+                    {
+                        listIndexes.Add(fields.IndexOf(field));
+                        return true;
+                    }
+                    else return false;
+                }).ToList();
+                MessageBox.Show("No. Indexes: " + listIndexes.Count +"No. para: " + parameters.Where(para => listIndexes.Contains(parameters.IndexOf(para))).ToArray().Length.ToString());
+                parameters = parameters.Where(para => listIndexes.Contains(parameters.IndexOf(para))).ToList();
+                
                 qr += "SP_UPDATE_DIEM @" + String.Join(" , @", fields);
-
+                
                 // list to array <object>
                 object[] obj = parameters.Cast<object>().ToArray();
                 int result = DataProvider.Instance.ExecuteNonQuery(qr, obj);
@@ -1019,7 +852,8 @@ namespace DMDS
             string ho = txtLastName.Text;
             string noisinh = txtPlace.Text;
             string ngaysinh = txtBirthday.Text;
-
+            string mamh = "";
+            float diem = -1;
             bool success = false;
 
             if (ma != "" && ten != "")
@@ -1117,7 +951,10 @@ namespace DMDS
                     }
                     else if (TABLE == "DIEM")
                     {
-                        if (ma != "" && noisinh != "" && diachi != "")
+                        mamh = noisinh;
+                        diem = float.Parse(diachi);
+
+                        if (ma != "" && mamh != "" && diem >= 0 && diem <= 10)
                         {
                             if (lan <= 0) 
                             {
@@ -1125,8 +962,7 @@ namespace DMDS
                             }
                             else
                             {
-                                //int solan = DiemController.Instance.get
-                                success = DiemController.Instance.InsertDiem(ma, noisinh, lan, float.Parse(diachi));
+                                success = DiemController.Instance.InsertDiem(ma, mamh, lan, diem);
                                 if (success)
                                 {
                                     MessageBox.Show("Thêm Điểm mới thành công");
@@ -1408,6 +1244,205 @@ namespace DMDS
         }
         #endregion
 
+        #endregion
+
+        #region Báo Cáo functions
+        
+        // Mở Form
+        void openFormReport ()
+        {
+            formReport.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+
+            lbKhoaRP.Visible = true;
+            lbLopRP.Visible = true;
+            lbMonhocRP.Visible = true;
+            lbCodeDepartment.Visible = true;
+            lbCodeClass.Visible = true;
+            lbCodeSubject.Visible = true;
+            lbTimesRP.Visible = true;
+
+            cbKhoaRP.Visible = true;
+            cbLopRP.Visible = true;
+            cbMonhocRP.Visible = true;
+            txtCodeDepartment.Visible = true;
+            txtCodeClass.Visible = true;
+            txtCodeSubject.Visible = true;
+            txtTimesRP.Visible = true;
+
+            btnPreview.Visible = true;
+            btnCancelPreview.Visible = true;
+        }
+        
+        // Đóng Form
+        void closeFormReport()
+        {
+            formReport.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+
+            lbKhoaRP.Visible = false;
+            lbLopRP.Visible = false;
+            lbMonhocRP.Visible = false;
+            lbCodeDepartment.Visible = false;
+            lbCodeClass.Visible = false;
+            lbCodeSubject.Visible = false;
+            lbTimesRP.Visible = false;
+
+            cbKhoaRP.Visible = false;
+            cbLopRP.Visible = false;
+            cbMonhocRP.Visible = false;
+            txtCodeDepartment.Visible = false;
+            txtCodeClass.Visible = false;
+            txtCodeSubject.Visible = false;
+            txtTimesRP.Visible = false;
+
+            btnPreview.Visible = false;
+            btnCancelPreview.Visible = false;
+        }
+
+        // Report Danh sách Các Sinh Viên theo Lớp, Khoa
+        void LoadDSSV(string makh, string malop)
+        {
+            if (makh == "" && malop == "")
+            {
+                makh = "ALLDEPARTMENT";
+                malop = "ALLCLASS";
+            }
+            else if (makh != "" && malop == "")
+            {
+                malop = "ALLCLASS";
+            }
+
+            DataTable DSSV =  SinhvienController.Instance.GetListSinhvienByMalop(malop, makh);
+            
+            gridControl1.DataSource = DSSV;
+            gridControl1.ShowRibbonPrintPreview();
+        }
+
+        // Report Phiếu Điểm của Sinh Viên
+        void LoadPDSV(string masv, int lan)
+        {
+            DataTable PDSV = DiemController.Instance.GetListDiemByMasv(masv, lan);
+
+            gridControl1.DataSource = PDSV;
+            gridControl1.ShowRibbonPrintPreview();
+        }
+
+        // Report Danh Sách Lớp theo Khoa
+        void LoadDSLH(string makh)
+        {
+            if (makh == "")
+            {
+                makh = "ALLDEPARTMENT";
+            }
+
+            DataTable DSLH = LopController.Instance.GetListLopByMakh(makh);
+
+            gridControl1.DataSource = DSLH;
+            gridControl1.ShowRibbonPrintPreview();
+        }
+
+        // Report Phiếu Điểm cảu Lớp cụ thể
+        void LoadPDLH(string malop)
+        {
+            if (malop == "")
+            {
+                MessageBox.Show("Chọn một Lớp cụ thể");
+            }
+            else
+            {
+                gridControl1.DataSource = DiemController.Instance.GetListDiemByMalop(malop, 0);
+                gridControl1.ShowRibbonPrintPreview();
+            }
+        }
+
+        // Report Danh sach Điểm Môn Học Theo Khoa, Lớp và Môn học
+        void LoadDSDMH(string makh, string malop, string mamh, int lan)
+        {
+            DataTable Diem = DiemController.Instance.GetListDiem();
+
+            if (mamh == "ALLSUBJECT" && makh == "ALLDEPARTMENT" && malop == "ALLCLASS")
+            {
+                Diem = DiemController.Instance.GetListDiemByLan(lan);
+            }
+            else if (mamh != "ALLSUBJECT" && makh == "ALLDEPARTMENT" && malop == "ALLCLASS")
+            {
+                if (mamh != "")
+                {
+                    Diem = DiemController.Instance.GetListDiemByMamh(mamh, lan);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn Môn Học cụ thể");
+                }
+            }
+            else if (mamh == "ALLSUBJECT" && makh != "ALLDEPARTMENT" && malop == "ALLCLASS")
+            {
+                if (makh != "")
+                {
+                    Diem = DiemController.Instance.GetListDiemByMakh(makh, lan);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn Khoa cụ thể");
+                }
+            }
+            else if (mamh == "ALLSUBJECT" && makh == "ALLDEPARTMENT" && malop != "ALLCLASS")
+            {
+                if (malop != "")
+                {
+                    Diem = DiemController.Instance.GetListDiemByMalop(malop, lan);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn Lớp cụ thể");
+                }
+            }
+            else if (mamh != "ALLSUBJECT" && makh != "ALLDEPARTMENT" && malop == "ALLCLASS")
+            {
+                if (mamh != "" && makh != "")
+                {
+                    Diem = DiemController.Instance.GetListDiemByMakhMamh(makh, mamh, lan);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn Môn Học hay Khoa cụ thể");
+                }
+            }
+            else if (mamh == "ALLSUBJECT" && makh != "ALLDEPARTMENT" && malop != "ALLCLASS")
+            {
+                if (makh != "" && malop != "")
+                {
+                    Diem = DiemController.Instance.GetListDiemByMakhMalop(makh, malop, lan);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn Khoa hay Lớp cụ thể");
+                }
+            }
+            else if (mamh != "ALLSUBJECT" && makh == "ALLDEPARTMENT" && malop != "ALLCLASS")
+            {
+                if (malop != "" && mamh != "")
+                {
+                    Diem = DiemController.Instance.GetListDiemByMalopMamh(malop, mamh, lan);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn Môn Học hay Lớp cụ thể");
+                }
+            }
+            else if (mamh != "ALLSUBJECT" && makh != "ALLDEPARTMENT" && malop != "ALLCLASS" && mamh != "" && makh != "" && malop != "")
+            {
+                if (makh != "" && mamh != "" && malop != "")
+                {
+                    Diem = DiemController.Instance.GetListDiemByMakhMalopMamh(makh, malop, mamh, lan);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn Môn Học hay Khoa, Lớp cụ thể");
+                }
+            }
+            gridControl1.DataSource = Diem;
+            //DataTable DSDMH = DiemController.Instance.get
+        }
         #endregion
 
         #region Bao Cao Menu
